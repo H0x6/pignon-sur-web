@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Domaine Hellwig, vigneron à Vieux-Thann | Vins d'Alsace en bio</title>
+<meta name="description" content="Riesling, pinot gris, gewurztraminer et crémant sur le dernier coteau de la route des vins d'Alsace, à Vieux-Thann. Dégustation au caveau, visite des foudres sur réservation.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1A2F2B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231E2B23'/%3E%3Cpath d='M13 5h6v7c0 3 4 5 4 9v6a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2v-6c0-4 4-6 4-9z' fill='%23D6AE45'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/gloock.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="media/coteau-poster-1280.webp" as="image" media="(min-width: 700px)">
+<link rel="preload" href="media/coteau-poster-854.webp" as="image" media="(max-width: 699px)">
+<link rel="stylesheet" href="hellwig.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="hellwig.js" defer></script>
+</head>
+<body>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<aside class="demo" aria-label="Site d'exemple">
+  <span><strong>Site d'exemple premium</strong> créé par Pignon sur Web : le domaine est imaginaire.</span>
+  <a href="../../realisations.html#exemples">Voir les autres exemples</a>
+  <a href="../../contact.html">Je veux ce niveau de site</a>
+</aside>
+
+<header class="entete" data-entete>
+  <div class="entete__in">
+    <a class="marque" href="#haut" aria-label="Domaine Hellwig, retour en haut">
+      <svg class="marque__flute" viewBox="0 0 20 60" aria-hidden="true"><path d="M7 1h6v16c0 5 6 8 6 15v25a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V32c0-7 6-10 6-15z"/></svg>
+      <span class="marque__nom">Hellwig</span>
+      <span class="marque__lieu">Vigneron à Vieux-Thann</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu principal">
+      <ul>
+        <li><a href="#annee">L'année</a></li>
+        <li><a href="#coteau">Le coteau</a></li>
+        <li><a href="#vins">Les vins</a></li>
+        <li><a href="#visiter">Visiter</a></li>
+      </ul>
+    </nav>
+    <button class="panier-btn" type="button" data-ouvrir-commande aria-haspopup="dialog" aria-label="Ma commande, aucune bouteille">
+      <span>Ma commande</span><span class="panier-btn__nb" data-nb>0</span>
+    </button>
+    <a class="bouton bouton--clair entete__cta" href="#visiter">Réserver une visite</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav"><span aria-hidden="true"></span><span class="sr">Menu</span></button>
+  </div>
+</header>
+
+<main id="contenu" tabindex="-1">
+
+  <!-- Le coteau en vidéo, le nom du lieu en très grand -->
+  <section class="une" id="haut" aria-labelledby="titre-une">
+    <div class="une__media" aria-hidden="true">
+      <video class="une__video" data-video muted loop playsinline preload="none" poster="media/coteau-poster-1280.webp"
+        data-src-grand="media/coteau-1280.mp4" data-src-petit="media/coteau-854.mp4" data-poster-petit="media/coteau-poster-854.webp"></video>
+    </div>
+    <div class="une__in">
+      <div class="une__haut"><p class="une__lieu">Domaine Hellwig, Vieux-Thann, Haut-Rhin</p><p class="statut" data-statut hidden></p></div>
+      <h1 class="une__titre" id="titre-une"><span class="ligne"><span>Le dernier coteau</span></span><span class="ligne"><span>de la route des vins</span></span></h1>
+      <div class="une__bas">
+        <p class="une__texte">Au pied des Vosges, nos vignes tiennent sur une pente volcanique exposée plein sud. Neuf hectares cultivés en bio, vendangés à la main, élevés en foudres.</p>
+        <p class="une__actions">
+          <a class="bouton" href="#vins">Découvrir les vins</a>
+          <a class="lien-clair" href="#visiter">Venir au caveau</a>
+        </p>
+      </div>
+    </div>
+    <button class="une__pause" type="button" data-pause aria-pressed="false"><span class="sr">Mettre la vidéo en pause</span><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M8 5h3v14H8zM13 5h3v14h-3z"/><path class="i-lecture" d="M8 5l11 7-11 7z"/></svg></button>
+  </section>
+
+  <!-- Le texte s'allume mot à mot au fil du défilement -->
+  <section class="manifeste" aria-label="Le domaine">
+    <p class="manifeste__texte" data-mots>La route des vins d'Alsace commence à Marlenheim et s'arrête ici, à Thann. Plus au sud, la vigne laisse la place à la forêt. Ce coteau est le dernier, et sans doute le plus raide : on y travaille presque tout à la main, comme nos arrière-grands-parents en 1921.</p>
+    <p class="manifeste__signature">Anne et Mathis Hellwig, quatrième génération</p>
+  </section>
+
+  <!-- L'année à la vigne : le cadran tourne avec le défilement, un mois après l'autre -->
+  <section class="annee" id="annee" aria-labelledby="titre-annee" data-annee>
+    <div class="annee__scene">
+      <div class="annee__photos" aria-hidden="true" data-photos></div>
+      <div class="annee__in">
+        <div class="annee__tete">
+          <h2 class="annee__titre" id="titre-annee">Une année dans les rangs</h2>
+          <p class="annee__aide">Faites défiler : le cadran avance d'un mois à chaque pas.</p>
+        </div>
+        <div class="cadran" aria-hidden="true">
+          <div class="cadran__roue" data-roue>
+            <svg class="cadran__traits" viewBox="0 0 200 200"><g data-traits></g></svg>
+          </div>
+          <div class="cadran__aiguille"></div>
+          <div class="cadran__centre"><span class="cadran__num" data-num>01</span><span class="cadran__saison" data-saison>Hiver</span></div>
+        </div>
+        <div class="mois" aria-hidden="true">
+          <p class="mois__nom" data-mois-nom>Janvier</p>
+          <p class="mois__tache" data-mois-tache>La taille</p>
+          <p class="mois__texte" data-mois-texte></p>
+          <p class="mois__maintenant" data-maintenant hidden></p>
+        </div>
+      </div>
+    </div>
+    <!-- Version lisible par tous (lecteurs d'écran, sans JavaScript) -->
+    <ol class="annee__liste" data-liste>
+      <li data-m="1" data-saison="Hiver" data-photo="mois-01" data-alt="Un piquet de vigne et sa ficelle orange dans la neige"><h3>Janvier : la taille</h3><p>Chaque cep est taillé à la main. On ne garde qu'un ou deux bois : c'est là que se décide la récolte de l'automne.</p></li>
+      <li data-m="2" data-saison="Hiver" data-photo="mois-02" data-alt="Le tronc d'un vieux cep fraîchement taillé"><h3>Février : le tirage des bois</h3><p>Les sarments coupés sont tirés hors des fils, puis broyés entre les rangs pour nourrir le sol.</p></li>
+      <li data-m="3" data-saison="Printemps" data-photo="mois-03" data-alt="Les bois de l'année, nus, attachés au fil"><h3>Mars : l'arcure</h3><p>Les bois gardés sont courbés en arc et attachés au fil. La sève remonte : la vigne « pleure » aux plaies de taille.</p></li>
+      <li data-m="4" data-saison="Printemps" data-photo="mois-04" data-alt="Un bourgeon de vigne qui s'ouvre sur un sarment"><h3>Avril : le débourrement</h3><p>Les bourgeons s'ouvrent. On surveille le thermomètre la nuit : une seule gelée peut coûter une partie de la récolte.</p></li>
+      <li data-m="5" data-saison="Printemps" data-photo="mois-05" data-alt="Les jeunes pousses vertes de la vigne au soleil"><h3>Mai : l'ébourgeonnage</h3><p>On retire à la main les pousses en trop pour aérer la vigne. Entre les rangs, l'herbe et les fleurs restent.</p></li>
+      <li data-m="6" data-saison="Été" data-photo="mois-06" data-alt="La fleur de vigne, minuscule, sur une jeune grappe"><h3>Juin : la floraison</h3><p>Pendant une dizaine de jours, la fleur de vigne embaume le coteau. Le nombre de raisins se joue là.</p></li>
+      <li data-m="7" data-saison="Été" data-photo="mois-07" data-alt="Le vignoble en été, un village dans le lointain"><h3>Juillet : le palissage</h3><p>Les rameaux sont relevés entre les fils et rognés au sommet. Les grappes grossissent à l'ombre des feuilles.</p></li>
+      <li data-m="8" data-saison="Été" data-photo="mois-08" data-alt="Des grappes noires dans la lumière du soir"><h3>Août : la véraison</h3><p>Le raisin change de couleur et se charge en sucre. On goûte les baies, rang par rang, pour fixer la date des vendanges.</p></li>
+      <li data-m="9" data-saison="Automne" data-photo="mois-09" data-alt="Des mains gantées cueillent une grappe"><h3>Septembre : les vendanges</h3><p>Tout est cueilli à la main, en caissettes, parcelle par parcelle. Le crémant ouvre la marche, le gewurztraminer la ferme.</p></li>
+      <li data-m="10" data-saison="Automne" data-photo="mois-10" data-alt="Des rangs de vigne aux feuilles jaunes"><h3>Octobre : le pressoir</h3><p>Les raisins sont pressés entiers, lentement. Les jus fermentent dans nos foudres, sans levures ajoutées.</p></li>
+      <li data-m="11" data-saison="Automne" data-photo="mois-11" data-alt="Le vignoble doré au pied des montagnes"><h3>Novembre : les vendanges tardives</h3><p>Les années où l'automne le permet, quelques rangs attendent la surmaturité. Les feuilles tombent, le coteau devient or.</p></li>
+      <li data-m="12" data-saison="Hiver" data-photo="mois-12" data-alt="Une cave voûtée et ses rangées de tonneaux"><h3>Décembre : la cave</h3><p>Les vins reposent sur leurs lies jusqu'au printemps. Le caveau reste ouvert pour vos commandes de fin d'année.</p></li>
+    </ol>
+  </section>
+
+  <!-- Le coteau en coupe : trois lieux-dits, trois sols -->
+  <section class="coteau" id="coteau" aria-labelledby="titre-coteau" data-coteau>
+    <div class="coteau__tete">
+      <h2 class="titre-section" id="titre-coteau">Trois lieux-dits sur une même pente</h2>
+      <p class="coteau__intro">Entre 300 et 430 mètres d'altitude, le sol change trois fois. Chaque parcelle a son cépage, et chaque cépage sa cuvée.</p>
+    </div>
+    <div class="coupe">
+      <svg class="coupe__dessin" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E6E4DA"/><stop offset="1" stop-color="#F3F1EA"/></linearGradient>
+          <pattern id="rangs" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-24)"><rect width="14" height="14" fill="#56683F"/><rect width="3" height="14" fill="#3E5130"/></pattern>
+          <pattern id="gres" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#B4644E"/><circle cx="3" cy="3" r="1" fill="#9A4F3B"/><circle cx="8" cy="7" r="0.8" fill="#C97B63"/></pattern>
+          <pattern id="volcan" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#4A4744"/><path d="M0 12L6 6M6 12L12 6" stroke="#5E5A55" stroke-width="1.4"/></pattern>
+          <pattern id="limon" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#C9A86A"/><circle cx="5" cy="5" r="1.4" fill="#B3925A"/></pattern>
+        </defs>
+        <rect width="1200" height="560" fill="url(#ciel)"/>
+        <!-- Soleil du sud -->
+        <g class="coupe__soleil" data-plan="0.35"><circle cx="1010" cy="120" r="46" fill="#D6AE45" opacity=".9"/><path d="M1010 40v-22M1010 222v-22M930 120h-22M1112 120h-22" stroke="#D6AE45" stroke-width="3" stroke-linecap="round" opacity=".6"/></g>
+        <!-- Ballons des Vosges, au loin -->
+        <path class="coupe__plan" data-plan="0.18" d="M0 250 C120 180 220 150 330 170 S520 120 640 160 S820 210 920 190 S1100 170 1200 210 V560 H0Z" fill="#B9C0B2"/>
+        <path class="coupe__plan" data-plan="0.1" d="M0 300 C160 240 260 230 380 250 S560 240 700 270 S900 300 1200 290 V560 H0Z" fill="#8F9C88"/>
+        <!-- Le coteau : sol en coupe, vignes en surface -->
+        <g class="coupe__plan" data-plan="0">
+          <path d="M0 200 C150 204 230 236 340 288 S560 384 700 420 S960 470 1200 478 V560 H0Z" fill="url(#rangs)"/>
+          <path d="M0 224 C150 228 230 260 340 312 S560 408 700 444 S960 494 1200 502 V560 H0Z" fill="#1E2B23"/>
+          <path d="M0 228 C150 232 230 264 340 316 L300 560 H0Z" fill="url(#gres)"/>
+          <path d="M340 316 C440 362 560 412 700 448 L660 560 H300Z" fill="url(#volcan)"/>
+          <path d="M700 448 C820 478 960 498 1200 506 V560 H660Z" fill="url(#limon)"/>
+          <path d="M340 316 L300 560 M700 448 L660 560" stroke="#F3F1EA" stroke-width="1.5" stroke-dasharray="5 6" opacity=".6"/>
+          <g class="coupe__sols" font-size="14">
+            <text x="60" y="420">Grès rose</text>
+            <text x="400" y="510">Roches volcaniques</text>
+            <text x="820" y="540">Limons et galets</text>
+          </g>
+        </g>
+        <!-- Altitudes -->
+        <g class="coupe__altitudes" font-size="15">
+          <text x="40" y="186">430 m</text><text x="480" y="352">370 m</text><text x="1060" y="460">300 m</text>
+        </g>
+      </svg>
+      <div class="parcelles" role="group" aria-label="Les trois lieux-dits">
+        <button class="parcelle" type="button" style="--x:12%;--y:35%" aria-pressed="true" data-parcelle="kapellweg"><span class="parcelle__point" aria-hidden="true"></span><span class="parcelle__nom">Kapellweg</span></button>
+        <button class="parcelle" type="button" style="--x:48%;--y:66%" aria-pressed="false" data-parcelle="steinacker"><span class="parcelle__point" aria-hidden="true"></span><span class="parcelle__nom">Steinacker</span></button>
+        <button class="parcelle" type="button" style="--x:76%;--y:80%" aria-pressed="false" data-parcelle="sonnenrain"><span class="parcelle__point" aria-hidden="true"></span><span class="parcelle__nom">Sonnenrain</span></button>
+      </div>
+    </div>
+    <div class="fiches" aria-live="polite">
+      <article class="fiche" data-fiche="kapellweg">
+        <h3 class="fiche__nom">Kapellweg</h3>
+        <dl class="fiche__donnees">
+          <div><dt>Altitude</dt><dd>430 m</dd></div><div><dt>Pente</dt><dd>45 %</dd></div><div><dt>Sol</dt><dd>Grès rose des Vosges</dd></div><div><dt>Cépage</dt><dd>Riesling</dd></div>
+        </dl>
+        <p>Le haut du coteau, le plus frais, au bord de la forêt. Le grès donne des rieslings droits et tendus, qui demandent quelques années de cave.</p>
+        <a class="lien-fleche" href="#vin-riesling">Riesling Kapellweg</a>
+      </article>
+      <article class="fiche" data-fiche="steinacker" hidden>
+        <h3 class="fiche__nom">Steinacker</h3>
+        <dl class="fiche__donnees">
+          <div><dt>Altitude</dt><dd>370 m</dd></div><div><dt>Pente</dt><dd>60 %</dd></div><div><dt>Sol</dt><dd>Roches volcaniques</dd></div><div><dt>Cépages</dt><dd>Pinot gris, gewurztraminer</dd></div>
+        </dl>
+        <p>Le cœur du coteau, si raide qu'on y monte à pied, caissettes à l'épaule. La roche sombre garde la chaleur et donne aux vins leurs notes fumées.</p>
+        <a class="lien-fleche" href="#vin-pinot-gris">Pinot gris et gewurztraminer Steinacker</a>
+      </article>
+      <article class="fiche" data-fiche="sonnenrain" hidden>
+        <h3 class="fiche__nom">Sonnenrain</h3>
+        <dl class="fiche__donnees">
+          <div><dt>Altitude</dt><dd>300 m</dd></div><div><dt>Pente</dt><dd>20 %</dd></div><div><dt>Sol</dt><dd>Limons et galets</dd></div><div><dt>Cépages</dt><dd>Pinot noir, pinot blanc</dd></div>
+        </dl>
+        <p>Le pied du coteau, où le sol est plus profond. C'est là que poussent le pinot noir et les raisins du crémant.</p>
+        <a class="lien-fleche" href="#vin-pinot-noir">Pinot noir et crémant Sonnenrain</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Les vins : la vitrine défile à l'horizontale -->
+  <section class="vins" id="vins" aria-labelledby="titre-vins" data-vins>
+    <div class="vins__scene">
+      <div class="vins__tete">
+        <div class="vins__video" aria-hidden="true">
+          <video data-video-section muted loop playsinline preload="none" poster="media/riesling-poster.webp" data-src="media/riesling-960.mp4"></video>
+        </div>
+        <h2 class="titre-section" id="titre-vins">Six vins, un coteau</h2>
+        <p class="vins__intro">Prix au caveau, par bouteille de 75 cl. Ajoutez des bouteilles à votre commande : on vous rappelle pour le retrait ou la livraison.</p>
+        <p class="evin">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+      </div>
+      <div class="vins__piste" data-piste>
+        <ul class="vins__liste">
+          <!-- Chaque bouteille : verre, capsule, étiquette ; couleurs dans le style -->
+          <li class="vin" id="vin-cremant" style="--verre:#2B3D2C;--capsule:#D6AE45;--robe:#E8D58A" data-vin="cremant" data-nom="Crémant d'Alsace Brut" data-prix="13.5">
+            <div class="vin__bouteille" aria-hidden="true"><svg viewBox="0 0 60 300"><use href="#flute"/><text class="vin__etq-nom" x="30" y="214">Hellwig</text><text class="vin__etq-cuvee" x="30" y="230">Crémant</text><text class="vin__etq-an" x="30" y="244">Brut</text></svg></div>
+            <div class="vin__texte">
+              <h3 class="vin__nom">Crémant d'Alsace Brut</h3>
+              <p class="vin__origine">Pinot blanc, auxerrois et chardonnay du Sonnenrain</p>
+              <p class="vin__notes">Bulles fines, pomme verte, brioche légère. Pour l'apéritif et les tartes flambées.</p>
+              <p class="vin__style"><span class="vin__mention">Brut</span></p>
+              <div class="vin__achat"><p class="vin__prix">13,50 €</p><button class="bouton bouton--petit" type="button" data-ajouter>Ajouter</button></div>
+            </div>
+          </li>
+          <li class="vin" id="vin-riesling" style="--verre:#2B3D2C;--capsule:#E9E4D4;--robe:#E6DB9A" data-vin="riesling" data-nom="Riesling Kapellweg 2023" data-prix="17">
+            <div class="vin__bouteille" aria-hidden="true"><svg viewBox="0 0 60 300"><use href="#flute"/><text class="vin__etq-nom" x="30" y="214">Hellwig</text><text class="vin__etq-cuvee" x="30" y="230">Riesling</text><text class="vin__etq-an" x="30" y="244">Kapellweg 2023</text></svg></div>
+            <div class="vin__texte">
+              <h3 class="vin__nom">Riesling Kapellweg 2023</h3>
+              <p class="vin__origine">Riesling sur grès rose, à 430 m</p>
+              <p class="vin__notes">Citron, pierre mouillée, finale saline. Avec les poissons de rivière et la choucroute.</p>
+              <p class="vin__style"><span class="echelle" aria-hidden="true" style="--n:1"><i></i><i></i><i></i><i></i></span><span class="vin__mention">Sec</span></p>
+              <div class="vin__achat"><p class="vin__prix">17 €</p><button class="bouton bouton--petit" type="button" data-ajouter>Ajouter</button></div>
+            </div>
+          </li>
+          <li class="vin" id="vin-pinot-gris" style="--verre:#3A2C1F;--capsule:#B4644E;--robe:#D9B76A" data-vin="pinot-gris" data-nom="Pinot gris Steinacker 2022" data-prix="21">
+            <div class="vin__bouteille" aria-hidden="true"><svg viewBox="0 0 60 300"><use href="#flute"/><text class="vin__etq-nom" x="30" y="214">Hellwig</text><text class="vin__etq-cuvee" x="30" y="230">Pinot gris</text><text class="vin__etq-an" x="30" y="244">Steinacker 2022</text></svg></div>
+            <div class="vin__texte">
+              <h3 class="vin__nom">Pinot gris Steinacker 2022</h3>
+              <p class="vin__origine">Pinot gris sur roches volcaniques, à 370 m</p>
+              <p class="vin__notes">Poire mûre, notes fumées, bouche ample. Avec une volaille à la crème ou un munster affiné.</p>
+              <p class="vin__style"><span class="echelle" aria-hidden="true" style="--n:2"><i></i><i></i><i></i><i></i></span><span class="vin__mention">Demi-sec</span></p>
+              <div class="vin__achat"><p class="vin__prix">21 €</p><button class="bouton bouton--petit" type="button" data-ajouter>Ajouter</button></div>
+            </div>
+          </li>
+          <li class="vin" id="vin-gewurztraminer" style="--verre:#3A2C1F;--capsule:#7A2E3A;--robe:#E0A94A" data-vin="gewurztraminer" data-nom="Gewurztraminer Steinacker 2022" data-prix="22">
+            <div class="vin__bouteille" aria-hidden="true"><svg viewBox="0 0 60 300"><use href="#flute"/><text class="vin__etq-nom" x="30" y="214">Hellwig</text><text class="vin__etq-cuvee" x="30" y="230">Gewurztraminer</text><text class="vin__etq-an" x="30" y="244">Steinacker 2022</text></svg></div>
+            <div class="vin__texte">
+              <h3 class="vin__nom">Gewurztraminer Steinacker 2022</h3>
+              <p class="vin__origine">Gewurztraminer sur roches volcaniques, à 370 m</p>
+              <p class="vin__notes">Rose, litchi, épices douces. Avec la cuisine épicée ou un dessert aux fruits jaunes.</p>
+              <p class="vin__style"><span class="echelle" aria-hidden="true" style="--n:3"><i></i><i></i><i></i><i></i></span><span class="vin__mention">Moelleux</span></p>
+              <div class="vin__achat"><p class="vin__prix">22 €</p><button class="bouton bouton--petit" type="button" data-ajouter>Ajouter</button></div>
+            </div>
+          </li>
+          <li class="vin" id="vin-pinot-noir" style="--verre:#1F1A17;--capsule:#6E2433;--robe:#6E2433" data-vin="pinot-noir" data-nom="Pinot noir Sonnenrain 2022" data-prix="24">
+            <div class="vin__bouteille" aria-hidden="true"><svg viewBox="0 0 60 300"><use href="#flute"/><text class="vin__etq-nom" x="30" y="214">Hellwig</text><text class="vin__etq-cuvee" x="30" y="230">Pinot noir</text><text class="vin__etq-an" x="30" y="244">Sonnenrain 2022</text></svg></div>
+            <div class="vin__texte">
+              <h3 class="vin__nom">Pinot noir Sonnenrain 2022</h3>
+              <p class="vin__origine">Pinot noir du Sonnenrain, élevé douze mois en fût</p>
+              <p class="vin__notes">Cerise noire, sous-bois, tanins fins. Avec le gibier ou le baeckeoffe.</p>
+              <p class="vin__style"><span class="vin__mention">Rouge, sec</span></p>
+              <div class="vin__achat"><p class="vin__prix">24 €</p><button class="bouton bouton--petit" type="button" data-ajouter>Ajouter</button></div>
+            </div>
+          </li>
+          <li class="vin" id="vin-vendanges-tardives" style="--verre:#3A2C1F;--capsule:#D6AE45;--robe:#C98A2C" data-vin="vendanges-tardives" data-nom="Riesling Vendanges tardives 2019 (50 cl)" data-prix="39">
+            <div class="vin__bouteille vin__bouteille--50" aria-hidden="true"><svg viewBox="0 0 60 300"><use href="#flute"/><text class="vin__etq-nom" x="30" y="214">Hellwig</text><text class="vin__etq-cuvee" x="30" y="230">Vendanges</text><text class="vin__etq-an" x="30" y="244">tardives 2019</text></svg></div>
+            <div class="vin__texte">
+              <h3 class="vin__nom">Riesling Vendanges tardives 2019</h3>
+              <p class="vin__origine">Riesling surmûri du Kapellweg, en bouteille de 50 cl</p>
+              <p class="vin__notes">Coing, miel, belle acidité. Avec le foie gras ou un fromage persillé.</p>
+              <p class="vin__style"><span class="echelle" aria-hidden="true" style="--n:4"><i></i><i></i><i></i><i></i></span><span class="vin__mention">Doux</span></p>
+              <div class="vin__achat"><p class="vin__prix">39 €</p><button class="bouton bouton--petit" type="button" data-ajouter>Ajouter</button></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- La cave : les foudres et quelques chiffres -->
+  <section class="cave" aria-labelledby="titre-cave">
+    <div class="cave__photos">
+      <figure class="cave__grande" data-parallaxe="0.08"><img src="img/foudres-800.webp" srcset="img/foudres-800.webp 800w, img/foudres-1600.webp 1600w" sizes="(min-width: 900px) 52vw, 100vw" alt="Les grands foudres de chêne cerclés de rouge, dans la cave voûtée" width="1600" height="1067" loading="lazy" decoding="async"></figure>
+      <figure class="cave__petite" data-parallaxe="-0.06"><img src="img/fut-craie-800.webp" srcset="img/fut-craie-800.webp 800w, img/fut-craie-1600.webp 1600w" sizes="(min-width: 900px) 24vw, 60vw" alt="Le fond d'un fût, annoté à la craie" width="1600" height="1067" loading="lazy" decoding="async"></figure>
+    </div>
+    <div class="cave__texte">
+      <h2 class="titre-section" id="titre-cave">Sous la maison, des foudres de 1902</h2>
+      <p>Nos vins fermentent et s'élèvent dans les foudres de chêne que l'arrière-grand-père a fait installer dans la cave voûtée. Ils sont lents, et c'est ce qu'on leur demande : des fermentations de plusieurs semaines, puis de longs mois sur lies fines.</p>
+      <dl class="chiffres">
+        <div><dt>Foudres de chêne en service</dt><dd>14</dd></div>
+        <div><dt>Mois sur lies, au minimum</dt><dd>8</dd></div>
+        <div><dt>Hectares en agriculture biologique</dt><dd>9</dd></div>
+        <div><dt>Cueillies à la main</dt><dd>100&#8239;%</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- La famille -->
+  <section class="famille" aria-labelledby="titre-famille">
+    <figure class="famille__photo"><img src="img/vigneron-800.webp" srcset="img/vigneron-800.webp 800w, img/vigneron-1600.webp 1600w" sizes="(min-width: 900px) 40vw, 100vw" alt="Mathis Hellwig présente une caissette de raisins pendant les vendanges" width="1600" height="1067" loading="lazy" decoding="async"></figure>
+    <div class="famille__texte">
+      <h2 class="titre-section" id="titre-famille">Une famille, quatre générations</h2>
+      <blockquote class="famille__citation"><p>« Sur ce coteau, on ne peut pas tricher : quand l'année est difficile, ça se goûte. Alors on y passe le temps qu'il faut. »</p><footer>Mathis Hellwig</footer></blockquote>
+      <p>Anne s'occupe de la cave et du caveau, Mathis de la vigne. Le domaine est passé en agriculture biologique en 2012 ; les vendanges se font avec une équipe de saisonniers qui revient d'année en année.</p>
+    </div>
+  </section>
+
+  <!-- Visiter : dégustation libre ou visite des foudres, sur réservation -->
+  <section class="visiter" id="visiter" aria-labelledby="titre-visiter">
+    <div class="visiter__in">
+      <div class="visiter__tete">
+        <h2 class="titre-section" id="titre-visiter">Venir au caveau</h2>
+        <p class="statut statut--sombre" data-statut hidden></p>
+      </div>
+      <div class="formules">
+        <article class="formule">
+          <h3>Dégustation au caveau</h3>
+          <p class="formule__prix">Gratuite, sans rendez-vous</p>
+          <p>Toute la gamme est ouverte à la dégustation. Du lundi au samedi, de 9 h à 12 h et de 14 h à 18 h 30.</p>
+        </article>
+        <article class="formule formule--visite">
+          <h3>Visite des foudres</h3>
+          <p class="formule__prix">12 € par personne, offerte dès 6 bouteilles</p>
+          <p>Une heure et demie dans la vigne et la cave, puis six vins à la dégustation. Le samedi à 10 h 30 et à 15 h, de 2 à 12 personnes.</p>
+        </article>
+      </div>
+      <form class="resa" data-resa aria-labelledby="titre-resa" novalidate>
+        <h3 class="resa__titre" id="titre-resa">Réserver une visite des foudres</h3>
+        <fieldset class="resa__groupe">
+          <legend>Samedi</legend>
+          <div class="resa__dates" data-dates></div>
+        </fieldset>
+        <fieldset class="resa__groupe">
+          <legend>Heure</legend>
+          <div class="resa__heures">
+            <label class="choix"><input type="radio" name="heure" value="10 h 30" checked><span>10 h 30</span></label>
+            <label class="choix"><input type="radio" name="heure" value="15 h"><span>15 h</span></label>
+          </div>
+        </fieldset>
+        <div class="resa__groupe">
+          <span class="resa__label" id="lbl-pers">Personnes</span>
+          <div class="compteur" role="group" aria-labelledby="lbl-pers">
+            <button type="button" data-moins aria-label="Une personne de moins">−</button>
+            <output data-pers aria-live="polite">2</output>
+            <button type="button" data-plus aria-label="Une personne de plus">+</button>
+          </div>
+        </div>
+        <div class="resa__champs">
+          <label class="champ"><span>Votre nom</span><input name="nom" type="text" autocomplete="name" required></label>
+          <label class="champ"><span>Téléphone</span><input name="tel" type="tel" autocomplete="tel" required></label>
+          <label class="champ champ--large"><span>E-mail <small>(facultatif)</small></span><input name="email" type="email" autocomplete="email"></label>
+        </div>
+        <p class="resa__recap" data-recap aria-live="polite"></p>
+        <p class="resa__erreur" data-erreur role="alert" hidden></p>
+        <button class="bouton" type="submit">Envoyer ma demande</button>
+        <p class="resa__note">Anne vous rappelle pour confirmer. La dégustation est réservée aux adultes ; les enfants sont les bienvenus à la visite, avec un jus de raisin du domaine.</p>
+      </form>
+      <div class="acces">
+        <h3>Accès</h3>
+        <p>4 chemin des Vignerons, 68800 Vieux-Thann<br>À 10 minutes à pied de la gare de Thann. Parking devant le caveau.</p>
+        <p><a href="tel:+33353017221">03 53 01 72 21</a><br><a href="mailto:caveau@domaine-hellwig.example">caveau@domaine-hellwig.example</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <div class="pied__mot" aria-hidden="true" data-mot="Hellwig"></div>
+  <div class="pied__in">
+    <p>Domaine Hellwig, vignerons à Vieux-Thann depuis 1921.<br>4 chemin des Vignerons, 68800 Vieux-Thann. <a href="tel:+33353017221">03 53 01 72 21</a></p>
+    <p>Caveau : du lundi au samedi, 9 h – 12 h et 14 h – 18 h 30.</p>
+    <p class="evin">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+    <p class="pied__liens"><a href="mentions-legales.html">Mentions légales et crédits</a><span>Site réalisé par <a href="../../index.html">Pignon sur Web</a></span></p>
+  </div>
+</footer>
+
+<!-- Ma commande : un tiroir qui sort de la droite -->
+<div class="tiroir" data-tiroir hidden>
+  <div class="tiroir__fond" data-fermer-commande></div>
+  <div class="tiroir__panneau" role="dialog" aria-modal="true" aria-labelledby="titre-commande" tabindex="-1">
+    <div class="tiroir__tete">
+      <h2 id="titre-commande">Ma commande</h2>
+      <button class="tiroir__fermer" type="button" data-fermer-commande><span class="sr">Fermer</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <p class="tiroir__vide" data-vide>Votre commande est vide. Ajoutez des bouteilles depuis la liste des vins.</p>
+    <ul class="lignes" data-lignes></ul>
+    <form class="tiroir__form" data-commande novalidate hidden>
+      <p class="tiroir__total"><span>Total</span><strong data-total>0 €</strong></p>
+      <fieldset class="tiroir__groupe">
+        <legend>Retrait ou livraison</legend>
+        <label class="choix"><input type="radio" name="mode" value="Retrait au caveau" checked><span>Retrait au caveau</span></label>
+        <label class="choix"><input type="radio" name="mode" value="Livraison dans le Haut-Rhin"><span>Livraison dans le Haut-Rhin</span></label>
+      </fieldset>
+      <label class="champ"><span>Votre nom</span><input name="nom" type="text" autocomplete="name" required></label>
+      <label class="champ"><span>Téléphone</span><input name="tel" type="tel" autocomplete="tel" required></label>
+      <label class="case"><input type="checkbox" name="majeur" required><span>J'ai 18 ans ou plus.</span></label>
+      <p class="resa__erreur" data-erreur role="alert" hidden></p>
+      <button class="bouton bouton--large" type="submit">Envoyer ma commande</button>
+      <p class="tiroir__note">Rien n'est payé en ligne : on vous rappelle pour confirmer, et vous réglez au retrait ou à la livraison. Livraison offerte dès 24 bouteilles.</p>
+      <p class="evin">La vente d'alcool est interdite aux mineurs. L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+    </form>
+  </div>
+</div>
+
+<p class="annonce sr" aria-live="polite" data-annonce></p>
+
+<!-- La flûte d'Alsace, dessinée une fois et réutilisée pour chaque vin -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="reflet" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#fff" stop-opacity=".28"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset=".85" stop-color="#000" stop-opacity=".25"/></linearGradient>
+    <symbol id="flute" viewBox="0 0 60 300">
+      <path class="flute__verre" d="M23 6c0-4 2-6 7-6s7 2 7 6v96c0 26 18 44 18 72v114c0 6-4 10-10 10H15C9 298 5 294 5 288V174c0-28 18-46 18-72z"/>
+      <path class="flute__capsule" d="M22.4 5c0-3.4 2.4-5 7.6-5s7.6 1.6 7.6 5v58H22.4z"/>
+      <rect class="flute__etiquette" x="9" y="196" width="42" height="58" rx="1.5"/>
+      <rect class="flute__collerette" x="20" y="120" width="20" height="10" rx="1"/>
+      <path d="M23 6c0-4 2-6 7-6s7 2 7 6v96c0 26 18 44 18 72v114c0 6-4 10-10 10H15C9 298 5 294 5 288V174c0-28 18-46 18-72z" fill="url(#reflet)"/>
+    </symbol>
+  </defs>
+</svg>
+</body>
+</html>
