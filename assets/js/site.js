@@ -148,6 +148,27 @@
     if (sum && byKeyboard(e)) instant(sum.parentNode);
   }, true);
 
+  /* Vidéo de vitrine (site premium sur l'accueil) ---------------------
+     Chargée et lue seulement quand elle est à l'écran ; jamais d'elle-même avec le mouvement
+     réduit ou l'économie de données ; un bouton permet de la mettre en pause. */
+  each(doc.querySelectorAll('[data-video-vitrine]'), function (v) {
+    var btn = v.parentNode.parentNode.querySelector('[data-pause-vitrine]');
+    var econome = navigator.connection && navigator.connection.saveData;
+    var arret = reduceMotion || econome;
+    var lire = function () { if (!v.src) v.src = v.getAttribute('data-src'); var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+    var maj = function () {
+      if (!btn) return;
+      btn.hidden = false;
+      btn.setAttribute('aria-pressed', String(arret));
+      btn.querySelector('.visually-hidden').textContent = arret ? 'Lire la vid\u00e9o' : 'Mettre la vid\u00e9o en pause';
+    };
+    maj();
+    if (btn) btn.addEventListener('click', function () { arret = !arret; if (arret) v.pause(); else lire(); maj(); });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (e) { if (e[0].isIntersecting && !arret) lire(); else v.pause(); }, { rootMargin: '120px 0px' }).observe(v);
+    }
+  });
+
   /* Apparition des sections au défilement -----------------------------
      Rien n'est masqué sans JavaScript ni quand le mouvement est réduit : la classe .anim
      n'est posée qu'ici, après avoir marqué comme visibles les éléments déjà à l'écran.
