@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kuchel, atelier de cuisines sur mesure à Sélestat | Alsace</title>
+<meta name="description" content="Cuisines dessinées avec vous et fabriquées dans notre atelier de Sélestat, en chêne, noyer et frêne. Composez la vôtre en 3D, recevez une estimation et prenez rendez-vous au showroom.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1F2224">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231F2224'/%3E%3Cpath d='M7 9h18M7 16h18M7 23h18' stroke='%23C89A6A' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="media/copeaux-poster-1280.webp" as="image" media="(min-width: 700px)">
+<link rel="preload" href="media/copeaux-poster-854.webp" as="image" media="(max-width: 699px)">
+<link rel="stylesheet" href="kuchel.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="kuchel.js" defer></script>
+</head>
+<body>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<aside class="demo" aria-label="Site d’exemple">
+  <span><strong>Site d’exemple premium</strong> créé par Pignon sur Web : l’atelier est imaginaire.</span>
+  <a href="../../realisations.html#exemples">Voir les autres exemples</a>
+  <a href="../../contact.html">Je veux ce niveau de site</a>
+</aside>
+
+<header class="entete" data-entete>
+  <div class="entete__in">
+    <a class="marque" href="#haut" aria-label="Kuchel, retour en haut">
+      <svg class="marque__signe" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18M3 12h18M3 19h18"/></svg>
+      <span class="marque__nom">Kuchel</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu principal">
+      <ul>
+        <li><a href="#configurer">Configurer</a></li>
+        <li><a href="#atelier">L’atelier</a></li>
+        <li><a href="#realisations">Réalisations</a></li>
+        <li><a href="#matieres">Matières</a></li>
+        <li><a href="#showroom">Showroom</a></li>
+      </ul>
+    </nav>
+    <a class="bouton bouton--petit entete__rdv" href="#showroom">Prendre rendez-vous</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav"><span class="burger__traits" aria-hidden="true"></span><span class="sr">Menu</span></button>
+  </div>
+</header>
+
+<main id="contenu">
+
+  <!-- Sur mesure ---------------------------------------------------------------- -->
+  <section class="une" id="haut" aria-labelledby="titre-une" data-une>
+    <video class="une__video" data-video muted loop playsinline preload="none" aria-hidden="true"
+      poster="media/copeaux-poster-1280.webp" data-poster-petit="media/copeaux-poster-854.webp"
+      data-src-grand="media/copeaux-1280.mp4" data-src-petit="media/copeaux-854.mp4" width="1280" height="720"></video>
+    <div class="une__contenu">
+      <h1 class="une__titre" id="titre-une"><span class="une__mesure" data-ajuste>Sur mesure</span><span class="sr">, cuisines d’ébéniste à Sélestat</span></h1>
+      <div class="cote" aria-hidden="true" data-cote><span class="cote__ligne"></span><span class="cote__valeur" data-cote-valeur>3 400 mm</span></div>
+      <div class="une__bas">
+        <p class="une__chapo">Des cuisines dessinées avec vous et fabriquées dans notre atelier de Sélestat, en chêne, noyer et frêne. Posées en deux jours, garanties quinze ans.</p>
+        <p class="une__actions">
+          <a class="bouton bouton--clair" href="#configurer">Composer ma cuisine</a>
+          <a class="lien-souligne" href="#atelier">Voir l’atelier</a>
+        </p>
+      </div>
+    </div>
+    <button class="pause une__pause" type="button" data-pause=".une__video" aria-pressed="false"><span class="sr">Mettre la vidéo en pause</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="i-pause" d="M8 5h3v14H8zM13 5h3v14h-3z"/><path class="i-lecture" d="M8 5l11 7-11 7z"/></svg></button>
+  </section>
+
+  <!-- Le configurateur ------------------------------------------------------------ -->
+  <section class="config" id="configurer" aria-labelledby="titre-config" data-config>
+    <div class="config__tete">
+      <h2 class="titre-section" id="titre-config">Composez votre cuisine</h2>
+      <p>Tournez autour, ouvrez les tiroirs, changez les bois et la pierre&#8239;: l’estimation se met à jour à chaque choix. C’est le point de départ de votre premier rendez-vous.</p>
+    </div>
+    <div class="config__corps">
+      <div class="config__scene" data-scene>
+        <img class="config__affiche" src="img/cuisine-3d-1600.webp" srcset="img/cuisine-3d-800.webp 800w, img/cuisine-3d-1600.webp 1600w" sizes="(min-width: 1100px) 62vw, 100vw" width="1600" height="1000" alt="La cuisine avec îlot en chêne et plan en grès rose, vue de trois quarts" loading="lazy" decoding="async" data-affiche>
+        <canvas class="config__canvas" role="img" aria-label="Vue en 3D de la cuisine composée" data-canvas></canvas>
+        <p class="config__chargement" data-chargement hidden>Montage de la cuisine…</p>
+        <div class="config__outils" data-outils hidden>
+          <div class="config__vues" role="group" aria-label="Point de vue">
+            <button type="button" data-vue="face">De face</button>
+            <button type="button" data-vue="troisquarts" aria-pressed="true">De trois quarts</button>
+            <button type="button" data-vue="dessus">De dessus</button>
+          </div>
+          <button class="config__ouvrir" type="button" data-tout-ouvrir>Ouvrir les façades</button>
+        </div>
+        <p class="config__aide" data-aide hidden>Glissez pour tourner autour, cliquez sur une façade pour l’ouvrir.</p>
+      </div>
+
+      <div class="config__options" data-options>
+        <fieldset class="choix choix--plan">
+          <legend>Implantation</legend>
+          <label class="choix__plan"><input type="radio" name="plan" value="lineaire"><svg viewBox="0 0 48 32" aria-hidden="true"><path d="M4 6h40v8H4z"/></svg><span>Linéaire</span></label>
+          <label class="choix__plan"><input type="radio" name="plan" value="l"><svg viewBox="0 0 48 32" aria-hidden="true"><path d="M4 6h40v8H12v14H4z"/></svg><span>En L</span></label>
+          <label class="choix__plan"><input type="radio" name="plan" value="ilot" checked><svg viewBox="0 0 48 32" aria-hidden="true"><path d="M4 4h40v7H4zM12 19h24v8H12z"/></svg><span>Avec îlot</span></label>
+        </fieldset>
+        <fieldset class="choix">
+          <legend>Façades <span class="choix__valeur" data-valeur="facade">Chêne naturel</span></legend>
+          <div class="pastilles">
+            <label class="pastille" title="Chêne naturel"><input type="radio" name="facade" value="chene" checked><span class="pastille__rond" style="background-image:url(img/ech-facade-chene.webp)"></span><span class="sr">Chêne naturel</span></label>
+            <label class="pastille" title="Noyer"><input type="radio" name="facade" value="noyer"><span class="pastille__rond" style="background-image:url(img/ech-facade-noyer.webp)"></span><span class="sr">Noyer</span></label>
+            <label class="pastille" title="Frêne noirci"><input type="radio" name="facade" value="frene"><span class="pastille__rond" style="background-image:url(img/ech-facade-frene.webp)"></span><span class="sr">Frêne noirci</span></label>
+            <label class="pastille" title="Laque sauge"><input type="radio" name="facade" value="sauge"><span class="pastille__rond" style="background:#8E9B85"></span><span class="sr">Laque sauge</span></label>
+            <label class="pastille" title="Laque craie"><input type="radio" name="facade" value="craie"><span class="pastille__rond" style="background:#E8E4DB"></span><span class="sr">Laque craie</span></label>
+            <label class="pastille" title="Laque encre"><input type="radio" name="facade" value="encre"><span class="pastille__rond" style="background:#25313C"></span><span class="sr">Laque encre</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="choix">
+          <legend>Plan de travail <span class="choix__valeur" data-valeur="plan_travail">Grès rose des Vosges</span></legend>
+          <div class="pastilles">
+            <label class="pastille" title="Grès rose des Vosges"><input type="radio" name="plan_travail" value="gres" checked><span class="pastille__rond" style="background-image:url(img/ech-plan-gres.webp)"></span><span class="sr">Grès rose des Vosges</span></label>
+            <label class="pastille" title="Quartz blanc"><input type="radio" name="plan_travail" value="quartz"><span class="pastille__rond" style="background-image:url(img/ech-plan-quartz.webp)"></span><span class="sr">Quartz blanc</span></label>
+            <label class="pastille" title="Inox brossé"><input type="radio" name="plan_travail" value="inox"><span class="pastille__rond pastille__rond--inox"></span><span class="sr">Inox brossé</span></label>
+            <label class="pastille" title="Chêne massif"><input type="radio" name="plan_travail" value="chene"><span class="pastille__rond" style="background-image:url(img/ech-plan-chene.webp)"></span><span class="sr">Chêne massif</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="choix">
+          <legend>Poignées <span class="choix__valeur" data-valeur="poignee">Laiton massif</span></legend>
+          <div class="pastilles">
+            <label class="pastille" title="Laiton massif"><input type="radio" name="poignee" value="laiton" checked><span class="pastille__rond pastille__rond--laiton"></span><span class="sr">Laiton massif</span></label>
+            <label class="pastille" title="Acier noir"><input type="radio" name="poignee" value="noir"><span class="pastille__rond" style="background:#1D1D1D"></span><span class="sr">Acier noir</span></label>
+            <label class="pastille" title="Sans poignée, profil en gorge"><input type="radio" name="poignee" value="gorge"><span class="pastille__rond pastille__rond--gorge"></span><span class="sr">Sans poignée, profil en gorge</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="choix">
+          <legend>Couleur des murs <span class="choix__valeur" data-valeur="mur">Blanc de chaux</span></legend>
+          <div class="pastilles">
+            <label class="pastille" title="Blanc de chaux"><input type="radio" name="mur" value="chaux" checked><span class="pastille__rond" style="background:#E6E4DF"></span><span class="sr">Blanc de chaux</span></label>
+            <label class="pastille" title="Vert de gris"><input type="radio" name="mur" value="vert"><span class="pastille__rond" style="background:#ADB7A6"></span><span class="sr">Vert de gris</span></label>
+            <label class="pastille" title="Argile"><input type="radio" name="mur" value="argile"><span class="pastille__rond" style="background:#D4C0AD"></span><span class="sr">Argile</span></label>
+            <label class="pastille" title="Gris nuit"><input type="radio" name="mur" value="nuit"><span class="pastille__rond" style="background:#3C4249"></span><span class="sr">Gris nuit</span></label>
+          </div>
+        </fieldset>
+
+        <div class="devis" aria-labelledby="titre-devis">
+          <h3 class="devis__titre" id="titre-devis">Votre estimation</h3>
+          <p class="devis__prix" data-prix>de 25 100 à 28 800&nbsp;€</p>
+          <p class="devis__detail">Posée, électroménager non compris. Le prix exact est établi après le relevé chez vous.</p>
+          <p class="devis__resume" data-resume>Cuisine avec îlot, façades en chêne naturel, plan en grès rose des Vosges, poignées en laiton massif.</p>
+          <p class="devis__actions">
+            <a class="bouton" href="mailto:atelier@kuchel.example" data-envoyer>Recevoir mon plan</a>
+            <button class="lien-souligne devis__copier" type="button" data-copier>Copier le lien de ma cuisine</button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- L'atelier : de la mesure à la pose ----------------------------------------- -->
+  <section class="atelier" id="atelier" aria-labelledby="titre-atelier" data-atelier>
+    <div class="atelier__colle" data-atelier-colle>
+      <div class="atelier__tete">
+        <h2 class="titre-section" id="titre-atelier">De la mesure à la pose, neuf semaines</h2>
+        <p>Onze menuisiers, un atelier de 1&nbsp;800&nbsp;m² et aucun caisson acheté tout fait. Voici ce qui se passe entre votre premier rendez-vous et le jour où vous cuisinez.</p>
+      </div>
+      <div class="regle" aria-hidden="true" data-regle>
+        <span class="regle__fond"></span><span class="regle__avance" data-regle-avance></span>
+        <span class="regle__sem regle__sem--debut" style="--s:0">semaine 1</span><span class="regle__sem" style="--s:2">3</span><span class="regle__sem" style="--s:4">5</span><span class="regle__sem" style="--s:6">7</span><span class="regle__sem regle__sem--fin" style="--s:8">9</span>
+      </div>
+      <ol class="atelier__piste" data-piste tabindex="0" aria-label="Les cinq étapes, de la mesure à la pose">
+        <li class="etape">
+          <div class="etape__media"><video data-video-lazy muted loop playsinline preload="none" aria-hidden="true" poster="media/releve-poster-480.webp" data-src="media/releve-480.mp4" width="480" height="600"></video></div>
+          <p class="etape__quand">Semaine 1</p>
+          <h3 class="etape__titre">Le relevé</h3>
+          <p>Nous venons chez vous mesurer au millimètre, photographier les murs et repérer les arrivées d’eau et d’électricité.</p>
+        </li>
+        <li class="etape">
+          <div class="etape__media"><video data-video-lazy muted loop playsinline preload="none" aria-hidden="true" poster="media/trace-poster-480.webp" data-src="media/trace-480.mp4" width="480" height="600"></video></div>
+          <p class="etape__quand">Semaines 2 et 3</p>
+          <h3 class="etape__titre">Le plan</h3>
+          <p>Vous recevez un plan coté et une vue en 3D. On ajuste ensemble jusqu’à ce que chaque tiroir tombe juste.</p>
+        </li>
+        <li class="etape">
+          <div class="etape__media"><video data-video-lazy muted loop playsinline preload="none" aria-hidden="true" poster="media/plots-poster-480.webp" data-src="media/plots-480.mp4" width="480" height="600"></video></div>
+          <p class="etape__quand">Semaine 4</p>
+          <h3 class="etape__titre">Le bois</h3>
+          <p>Chêne et frêne des forêts d’Alsace, noyer de Dordogne, séchés deux ans sous notre hangar. On choisit les plots de votre cuisine.</p>
+        </li>
+        <li class="etape">
+          <div class="etape__media"><video data-video-lazy muted loop playsinline preload="none" aria-hidden="true" poster="media/decoupe-poster-480.webp" data-src="media/decoupe-480.mp4" width="480" height="600"></video></div>
+          <p class="etape__quand">Semaines 5 à 8</p>
+          <h3 class="etape__titre">La fabrication</h3>
+          <p>Découpe, placage, assemblage et vernis à l’eau&#8239;: tout est fait à l’atelier. Chaque caisson porte le nom de celui qui l’a monté.</p>
+        </li>
+        <li class="etape">
+          <div class="etape__media"><video data-video-lazy muted loop playsinline preload="none" aria-hidden="true" poster="media/pose-poster-480.webp" data-src="media/pose-480.mp4" width="480" height="600"></video></div>
+          <p class="etape__quand">Semaine 9</p>
+          <h3 class="etape__titre">La pose</h3>
+          <p>Deux jours chez vous, une équipe de deux. Nous repartons avec les cartons et laissons une cuisine qui ferme sans bruit.</p>
+        </li>
+      </ol>
+      <button class="pause atelier__pause" type="button" data-pause=".etape__media video" aria-pressed="false"><span class="sr">Mettre les vidéos en pause</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="i-pause" d="M8 5h3v14H8zM13 5h3v14h-3z"/><path class="i-lecture" d="M8 5l11 7-11 7z"/></svg></button>
+    </div>
+  </section>
+
+  <!-- Réalisations ------------------------------------------------------------------ -->
+  <section class="realisations" id="realisations" aria-labelledby="titre-real">
+    <div class="realisations__tete">
+      <h2 class="titre-section" id="titre-real">Quelques cuisines posées</h2>
+      <p>Chaque cuisine est unique, mais elles se ressemblent sur un point&#8239;: on ne voit pas où elle s’arrête et où le mur commence.</p>
+    </div>
+    <ul class="real" role="list" data-real>
+      <li class="real__item real__item--grand">
+        <figure>
+          <div class="real__img"><img src="img/krutenau-800.webp" srcset="img/krutenau-800.webp 800w, img/krutenau-1600.webp 1600w" sizes="(min-width: 900px) 52vw, 92vw" width="800" height="1200" alt="Une cuisine aux façades en chêne cintrées, crédence en marbre veiné" loading="lazy" decoding="async"></div>
+          <figcaption><span class="real__lieu">Appartement, Strasbourg</span><span class="real__desc">Chêne cintré, crédence en marbre, 3,8&nbsp;m linéaires</span><span class="real__prix">31&nbsp;800&nbsp;€</span></figcaption>
+        </figure>
+      </li>
+      <li class="real__item">
+        <figure>
+          <div class="real__img"><img src="img/obernai-800.webp" srcset="img/obernai-800.webp 800w, img/obernai-1600.webp 1600w" sizes="(min-width: 900px) 40vw, 92vw" width="800" height="533" alt="Une cuisine en noyer avec un îlot blanc et quatre tabourets en bois" loading="lazy" decoding="async"></div>
+          <figcaption><span class="real__lieu">Maison, Obernai</span><span class="real__desc">Noyer massif, îlot laqué craie</span><span class="real__prix">27&nbsp;400&nbsp;€</span></figcaption>
+        </figure>
+      </li>
+      <li class="real__item">
+        <figure>
+          <div class="real__img"><img src="img/hohwald-800.webp" srcset="img/hohwald-800.webp 800w, img/hohwald-1600.webp 1600w" sizes="(min-width: 900px) 40vw, 92vw" width="800" height="533" alt="Une cuisine en chêne avec une étagère ouverte et une fenêtre sur la forêt" loading="lazy" decoding="async"></div>
+          <figcaption><span class="real__lieu">Chalet, Le Hohwald</span><span class="real__desc">Chêne huilé, fenêtre sur la forêt</span><span class="real__prix">18&nbsp;600&nbsp;€</span></figcaption>
+        </figure>
+      </li>
+      <li class="real__item real__item--moyen">
+        <figure>
+          <div class="real__img"><img src="img/colmar-800.webp" srcset="img/colmar-800.webp 800w, img/colmar-1600.webp 1600w" sizes="(min-width: 900px) 44vw, 92vw" width="800" height="1207" alt="Une cuisine en frêne noirci encadrée de bois clair, niche éclairée" loading="lazy" decoding="async"></div>
+          <figcaption><span class="real__lieu">Maison de ville, Colmar</span><span class="real__desc">Frêne noirci, pierre sombre, niches éclairées</span><span class="real__prix">29&nbsp;300&nbsp;€</span></figcaption>
+        </figure>
+      </li>
+      <li class="real__item real__item--moyen">
+        <figure>
+          <div class="real__img"><img src="img/mulhouse-800.webp" srcset="img/mulhouse-800.webp 800w, img/mulhouse-1600.webp 1600w" sizes="(min-width: 900px) 44vw, 92vw" width="800" height="1199" alt="Une cuisine en bois clair et façades noires, colonnes toute hauteur" loading="lazy" decoding="async"></div>
+          <figcaption><span class="real__lieu">Loft, Mulhouse</span><span class="real__desc">Frêne clair et laque noire, colonnes toute hauteur</span><span class="real__prix">22&nbsp;900&nbsp;€</span></figcaption>
+        </figure>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Matières ---------------------------------------------------------------------- -->
+  <section class="matieres" id="matieres" aria-labelledby="titre-matieres" data-matieres>
+    <div class="matieres__tete">
+      <h2 class="titre-section" id="titre-matieres">Les matières</h2>
+      <p>Nous travaillons peu de matières, et nous savons d’où elles viennent.</p>
+    </div>
+    <div class="matieres__corps">
+      <ul class="matieres__liste" role="list">
+        <li><button type="button" class="matiere" aria-pressed="true" data-matiere="chene" data-essai="facade:chene"><span class="matiere__nom">Chêne d’Alsace</span><span class="matiere__texte">Des forêts de la Hardt et des Vosges du Nord, scié en plots et séché deux ans. Huilé ou verni à l’eau.</span></button></li>
+        <li><button type="button" class="matiere" aria-pressed="false" data-matiere="noyer" data-essai="facade:noyer"><span class="matiere__nom">Noyer</span><span class="matiere__texte">Noyer de Dordogne, veiné de brun et de miel. Pour les façades, les plans et les tablettes.</span></button></li>
+        <li><button type="button" class="matiere" aria-pressed="false" data-matiere="frene" data-essai="facade:frene"><span class="matiere__nom">Frêne noirci</span><span class="matiere__texte">Teinté dans la masse&#8239;: le veinage reste visible sous le noir, même après vingt ans.</span></button></li>
+        <li><button type="button" class="matiere" aria-pressed="false" data-matiere="gres" data-essai="plan_travail:gres"><span class="matiere__nom">Grès rose des Vosges</span><span class="matiere__texte">La pierre de la cathédrale de Strasbourg, taillée en plans de 3&nbsp;cm et hydrofugée. Chaque plan est unique.</span></button></li>
+        <li><button type="button" class="matiere" aria-pressed="false" data-matiere="laiton" data-essai="poignee:laiton"><span class="matiere__nom">Laiton massif</span><span class="matiere__texte">Poignées et robinets en laiton non verni&#8239;: il se patine avec les années, là où les mains passent.</span></button></li>
+      </ul>
+      <div class="matieres__vue">
+        <div class="matieres__images" data-matieres-images>
+          <img src="img/chene-800.webp" srcset="img/chene-800.webp 700w, img/chene-1600.webp 1200w" sizes="(min-width: 900px) 42vw, 92vw" width="700" height="875" alt="Le fil d’une planche de chêne, de très près" loading="lazy" decoding="async" data-pour="chene" class="est-visible">
+          <img src="img/noyer-800.webp" srcset="img/noyer-800.webp 700w, img/noyer-1600.webp 1200w" sizes="(min-width: 900px) 42vw, 92vw" width="700" height="875" alt="Le veinage brun et doré du noyer" loading="lazy" decoding="async" data-pour="noyer">
+          <img src="img/frene-800.webp" srcset="img/frene-800.webp 700w, img/frene-1600.webp 1200w" sizes="(min-width: 900px) 42vw, 92vw" width="700" height="875" alt="Un bois très sombre aux fibres serrées" loading="lazy" decoding="async" data-pour="frene">
+          <img src="img/gres-800.webp" srcset="img/gres-800.webp 700w, img/gres-1600.webp 1200w" sizes="(min-width: 900px) 42vw, 92vw" width="700" height="875" alt="Une pierre rose et beige aux nuances douces" loading="lazy" decoding="async" data-pour="gres">
+          <img src="img/laiton-800.webp" srcset="img/laiton-800.webp 700w, img/laiton-1600.webp 1200w" sizes="(min-width: 900px) 42vw, 92vw" width="700" height="875" alt="Un bouton de porte en laiton sur une façade claire" loading="lazy" decoding="async" data-pour="laiton">
+        </div>
+        <button class="bouton bouton--clair matieres__essai" type="button" data-essayer>Essayer dans ma cuisine</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showroom ------------------------------------------------------------------------ -->
+  <section class="showroom" id="showroom" aria-labelledby="titre-showroom">
+    <div class="showroom__photo">
+      <img src="img/showroom-800.webp" srcset="img/showroom-800.webp 800w, img/showroom-1600.webp 1600w" sizes="(min-width: 900px) 46vw, 92vw" width="800" height="640" alt="Une longue cuisine claire éclairée par des réglettes sous les façades" loading="lazy" decoding="async">
+      <img class="showroom__detail" src="img/tiroir-800.webp" width="800" height="1200" alt="Une main ouvre un tiroir en chêne à l’intérieur clair" loading="lazy" decoding="async">
+    </div>
+    <div class="showroom__texte">
+      <h2 class="titre-section" id="titre-showroom">Venez ouvrir les tiroirs</h2>
+      <p>Huit cuisines montées, toutes nos matières en grand format et l’atelier juste derrière la vitre. Un rendez-vous dure une heure et demie&#8239;; apportez vos mesures, même approximatives.</p>
+      <p class="showroom__statut" data-statut hidden></p>
+      <dl class="horaires">
+        <div><dt>Mardi au vendredi</dt><dd>10&nbsp;h – 12&nbsp;h et 14&nbsp;h – 18&nbsp;h&nbsp;30</dd></div>
+        <div><dt>Samedi</dt><dd>9&nbsp;h&nbsp;30 – 17&nbsp;h</dd></div>
+        <div><dt>Dimanche et lundi</dt><dd>Fermé</dd></div>
+      </dl>
+      <div class="creneaux" data-creneaux>
+        <h3 class="creneaux__titre">Choisir un créneau</h3>
+        <p class="creneaux__sans-js">Appelez-nous au <a href="tel:+33353016412">03&nbsp;53&nbsp;01&nbsp;64&nbsp;12</a> ou écrivez à <a href="mailto:atelier@kuchel.example">atelier@kuchel.example</a>.</p>
+      </div>
+      <p class="showroom__adresse">4 rue des Copeaux, 67600 Sélestat. Parking devant l’atelier.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <p class="pied__nom" aria-hidden="true" data-elastique>Kuchel</p>
+  <div class="pied__in">
+    <p><strong>Kuchel, atelier de cuisines</strong><br>4 rue des Copeaux<br>67600 Sélestat</p>
+    <p><a href="tel:+33353016412">03&nbsp;53&nbsp;01&nbsp;64&nbsp;12</a><br><a href="mailto:atelier@kuchel.example">atelier@kuchel.example</a></p>
+    <p>Kuchel, c’est «&#8239;la cuisine&#8239;» en alsacien. L’atelier fabrique des cuisines depuis 1987.</p>
+    <p class="pied__liens"><a href="mentions-legales.html">Mentions légales et crédits</a><a href="#haut">Revenir en haut</a></p>
+  </div>
+</footer>
+<p class="sr" aria-live="polite" data-annonce></p>
+</body>
+</html>

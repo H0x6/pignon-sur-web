@@ -14,7 +14,7 @@
 <link rel="preload" href="assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/site.css?v=3177026c19">
-<link rel="stylesheet" href="assets/css/accueil.css?v=960d0b3579">
+<link rel="stylesheet" href="assets/css/accueil.css?v=67af288043">
 <link rel="stylesheet" href="assets/css/enseignes.css?v=ff99c2267d">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
@@ -30,7 +30,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://www.pignonsurweb.fr/#entreprise","name":"Pignon sur Web","description":"Refonte de sites web pour les commerces et entreprises locales","url":"https://www.pignonsurweb.fr/","image":"https://www.pignonsurweb.fr/assets/img/og-image.png","logo":"https://www.pignonsurweb.fr/assets/img/logo.svg","priceRange":"À partir de 490 €","currenciesAccepted":"EUR","areaServed":[{"@type":"Place","name":"Haut-Rhin"},{"@type":"Place","name":"Alsace"},{"@type":"Place","name":"France"}],"knowsLanguage":"fr","email":"contact@pignonsurweb.fr","address":{"@type":"PostalAddress","addressCountry":"FR","addressRegion":"Grand Est"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://www.pignonsurweb.fr/#site","name":"Pignon sur Web","url":"https://www.pignonsurweb.fr/","inLanguage":"fr-FR","publisher":{"@id":"https://www.pignonsurweb.fr/#entreprise"}}</script>
 <script>document.documentElement.classList.add('js')</script>
-<script src="assets/js/site.js?v=e81812d132" defer></script>
+<script src="assets/js/site.js?v=b41c506f09" defer></script>
 </head>
 <body class="page-accueil">
 <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -199,26 +199,23 @@
   </div>
 </section>
 
-<section class="section premium" id="premium-accueil" aria-labelledby="titre-premium-accueil">
+<section class="section premium" id="premium-accueil" aria-labelledby="titre-premium-accueil" data-premium>
   <div class="wrap premium__grille">
-    <div class="premium__texte" data-reveal>
+    <div class="premium__texte premium__intro" data-reveal>
       <p class="badge badge--premium">Site premium</p>
       <h2 id="titre-premium-accueil">Quand le site doit être à la hauteur de la maison</h2>
-      <p class="premium__lead">Domaine viticole, hôtel, table gastronomique : je conçois un site entièrement sur mesure, autour d'une idée qui n'appartient qu'à vous.</p>
-      <p>Pour le Domaine Hellwig, un domaine imaginaire de Vieux-Thann, l'année à la vigne tourne sur un cadran quand on fait défiler la page : un mois, une photo, un travail.</p>
-      <ul class="premium__points" role="list">
-        <li>Une vidéo en ouverture et une mise en scène au défilement</li>
-        <li>La commande ou la réservation intégrée au site</li>
-        <li>Toujours rapide, lisible sur téléphone et accessible</li>
-      </ul>
-      <p class="btn-row premium__actions"><a class="btn" href="premium/hellwig/index.html">Visiter le Domaine Hellwig</a><a class="link-arrow premium__lien" href="contact.html">Parler de mon projet</a></p>
+      <p class="premium__lead">Domaine viticole, hôtel, cuisiniste, constructeur : je conçois un site entièrement sur mesure, autour d'une idée qui n'appartient qu'à vous.</p>
     </div>
-    <div class="premium__visuel">
-      <div class="browser premium__ecran" aria-hidden="true"><div class="browser__bar"><i></i><i></i><i></i><span class="browser__url">domaine-hellwig.fr</span></div>
+    <div class="premium__visuel" id="vitrine-premium" role="tabpanel" aria-labelledby="onglet-hellwig">
+      <div class="browser premium__ecran" aria-hidden="true"><div class="browser__bar"><i></i><i></i><i></i><span class="browser__url" data-premium-url>domaine-hellwig.fr</span></div>
         <video class="premium__video" data-video-vitrine muted loop playsinline preload="none" poster="assets/img/captures/hellwig-cadran.webp" data-src="assets/img/captures/hellwig-cadran.mp4" width="960" height="600"></video>
       </div>
-      <div class="mphone premium__tel" aria-hidden="true"><img class="mphone__shot" src="assets/img/captures/hellwig-mobile-600.webp" srcset="assets/img/captures/hellwig-mobile-300.webp 300w, assets/img/captures/hellwig-mobile-600.webp 600w" sizes="(min-width: 64rem) 9rem, 7rem" alt="" width="600" height="1298" loading="lazy" decoding="async"></div>
+      <div class="mphone premium__tel" data-tel="hellwig" aria-hidden="true"><img class="mphone__shot" src="assets/img/captures/hellwig-mobile-600.webp" srcset="assets/img/captures/hellwig-mobile-300.webp 300w, assets/img/captures/hellwig-mobile-600.webp 600w" sizes="(min-width: 64rem) 9rem, 7rem" alt="" width="600" height="1298" loading="lazy" decoding="async"></div><div class="mphone premium__tel" data-tel="felsenmatt" hidden aria-hidden="true"><img class="mphone__shot" src="assets/img/captures/felsenmatt-mobile-600.webp" srcset="assets/img/captures/felsenmatt-mobile-300.webp 300w, assets/img/captures/felsenmatt-mobile-600.webp 600w" sizes="(min-width: 64rem) 9rem, 7rem" alt="" width="600" height="1298" loading="lazy" decoding="async"></div><div class="mphone premium__tel" data-tel="kuchel" hidden aria-hidden="true"><img class="mphone__shot" src="assets/img/captures/kuchel-mobile-600.webp" srcset="assets/img/captures/kuchel-mobile-300.webp 300w, assets/img/captures/kuchel-mobile-600.webp 600w" sizes="(min-width: 64rem) 9rem, 7rem" alt="" width="600" height="1298" loading="lazy" decoding="async"></div><div class="mphone premium__tel" data-tel="holzmatt" hidden aria-hidden="true"><img class="mphone__shot" src="assets/img/captures/holzmatt-mobile-600.webp" srcset="assets/img/captures/holzmatt-mobile-300.webp 300w, assets/img/captures/holzmatt-mobile-600.webp 600w" sizes="(min-width: 64rem) 9rem, 7rem" alt="" width="600" height="1298" loading="lazy" decoding="async"></div>
       <button class="premium__pause" type="button" data-pause-vitrine aria-pressed="false" hidden><span class="visually-hidden">Mettre la vidéo en pause</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="i-pause" d="M8 5h3v14H8zM13 5h3v14h-3z"/><path class="i-lecture" d="M8 5l11 7-11 7z"/></svg></button>
+    </div>
+    <div class="premium__texte premium__choix" data-reveal>
+      <div class="premium__onglets" role="tablist" aria-label="Sites premium d'exemple"><button class="premium__onglet" type="button" role="tab" id="onglet-hellwig" aria-selected="true" aria-controls="vitrine-premium" tabindex="0" data-onglet="hellwig" data-clip="assets/img/captures/hellwig-cadran.mp4" data-poster="assets/img/captures/hellwig-cadran.webp" data-url="domaine-hellwig.fr" data-lien="premium/hellwig/index.html" data-cta="Visiter le Domaine Hellwig"><span class="premium__onglet-nom">Domaine Hellwig</span><span class="premium__onglet-idee">L&#39;année à la vigne tourne sur un cadran au fil du défilement.</span></button><button class="premium__onglet" type="button" role="tab" id="onglet-felsenmatt" aria-selected="false" aria-controls="vitrine-premium" tabindex="-1" data-onglet="felsenmatt" data-clip="assets/img/captures/felsenmatt-traverse.mp4" data-poster="assets/img/captures/felsenmatt-traverse.webp" data-url="felsenmatt.fr" data-lien="premium/felsenmatt/index.html" data-cta="Visiter l&#39;hôtel Felsenmatt"><span class="premium__onglet-nom">Felsenmatt</span><span class="premium__onglet-idee">On traverse l&#39;hôtel d&#39;une fenêtre à l&#39;autre, jusqu&#39;au spa et à la table.</span></button><button class="premium__onglet" type="button" role="tab" id="onglet-kuchel" aria-selected="false" aria-controls="vitrine-premium" tabindex="-1" data-onglet="kuchel" data-clip="assets/img/captures/kuchel-config.mp4" data-poster="assets/img/captures/kuchel-config.webp" data-url="kuchel-cuisines.fr" data-lien="premium/kuchel/index.html" data-cta="Visiter l&#39;atelier Kuchel"><span class="premium__onglet-nom">Kuchel</span><span class="premium__onglet-idee">Une cuisine en 3D que le visiteur compose lui-même, prix compris.</span></button><button class="premium__onglet" type="button" role="tab" id="onglet-holzmatt" aria-selected="false" aria-controls="vitrine-premium" tabindex="-1" data-onglet="holzmatt" data-clip="assets/img/captures/holzmatt-montage.mp4" data-poster="assets/img/captures/holzmatt-montage.webp" data-url="holzmatt.fr" data-lien="premium/holzmatt/index.html" data-cta="Visiter Holzmatt"><span class="premium__onglet-nom">Holzmatt</span><span class="premium__onglet-idee">La maison se construit sous vos yeux, semaine après semaine.</span></button></div>
+      <p class="btn-row premium__actions"><a class="btn" href="premium/hellwig/index.html" data-premium-lien>Visiter le Domaine Hellwig</a><a class="link-arrow premium__lien" href="contact.html">Parler de mon projet</a></p>
     </div>
   </div>
 </section>

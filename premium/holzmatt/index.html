@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Holzmatt, maisons à ossature bois dans les Vosges du Nord | Ingwiller</title>
+<meta name="description" content="Holzmatt dessine et construit des maisons à ossature bois en sapin et épicéa des Vosges du Nord. Regardez une maison se monter semaine après semaine, choisissez un modèle et estimez votre budget.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#17241D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2317241D'/%3E%3Cpath d='M6 15L16 7l10 8v10H6z' fill='none' stroke='%23F0B23C' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M11 25v-7M16 25v-7M21 25v-7' stroke='%23F0B23C' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/big-shoulders-stencil.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="media/ossature-poster-1280.webp" as="image" media="(min-width: 700px)">
+<link rel="preload" href="media/ossature-poster-854.webp" as="image" media="(max-width: 699px)">
+<link rel="stylesheet" href="holzmatt.css">
+<script>document.documentElement.classList.add('js')</script>
+<script src="holzmatt.js" defer></script>
+</head>
+<body>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<aside class="demo" aria-label="Site d’exemple">
+  <span><strong>Site d’exemple premium</strong> créé par Pignon sur Web : l’entreprise est imaginaire.</span>
+  <a href="../../realisations.html#exemples">Voir les autres exemples</a>
+  <a href="../../contact.html">Je veux ce niveau de site</a>
+</aside>
+
+<header class="entete" data-entete>
+  <div class="entete__in">
+    <a class="marque" href="#haut" aria-label="Holzmatt, retour en haut">
+      <svg class="marque__signe" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 15L16 6l11 9v11H5z"/><path d="M11 26v-8M16 26v-8M21 26v-8"/></svg>
+      <span class="marque__nom">Holzmatt</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Menu principal">
+      <ul>
+        <li><a href="#monter">La construction</a></li>
+        <li><a href="#maisons">Les maisons</a></li>
+        <li><a href="#budget">Budget</a></li>
+        <li><a href="#foret">La forêt</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="bouton bouton--petit entete__cta" href="#contact">Parler de mon terrain</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="nav"><span class="burger__traits" aria-hidden="true"></span><span class="sr">Menu</span></button>
+  </div>
+</header>
+
+<main id="contenu">
+
+  <!-- L'arrivée : l'ossature vue du ciel ------------------------------------------- -->
+  <section class="une" id="haut" aria-labelledby="titre-une">
+    <video class="une__video" data-video muted loop playsinline preload="none" aria-hidden="true"
+      poster="media/ossature-poster-1280.webp" data-poster-petit="media/ossature-poster-854.webp"
+      data-src-grand="media/ossature-1280.mp4" data-src-petit="media/ossature-854.mp4" width="1280" height="720"></video>
+    <div class="une__contenu">
+      <h1 class="une__titre" id="titre-une"><span class="une__ligne">Du tronc</span> <span class="une__ligne">aux clés en</span> <span class="une__ligne">quatorze semaines</span></h1>
+      <div class="une__bas">
+        <p class="une__chapo">Holzmatt dessine et construit des maisons à ossature bois depuis 1994, avec du sapin et de l’épicéa des Vosges du Nord sciés à trente kilomètres de l’atelier.</p>
+        <p class="une__actions">
+          <a class="bouton" href="#monter">Voir une maison se monter</a>
+          <a class="lien-fleche" href="#budget">Estimer mon budget</a>
+        </p>
+      </div>
+    </div>
+    <div class="tampon" aria-hidden="true">
+      <span class="tampon__haut">Bois des Vosges du Nord</span>
+      <span class="tampon__grand">C24</span>
+      <span class="tampon__bas">Ingwiller 2026</span>
+    </div>
+    <button class="pause une__pause" type="button" data-pause=".une__video" aria-pressed="false"><span class="sr">Mettre la vidéo en pause</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="i-pause" d="M8 5h3v14H8zM13 5h3v14h-3z"/><path class="i-lecture" d="M8 5l11 7-11 7z"/></svg></button>
+  </section>
+
+  <!-- La maison se monte au défilement ---------------------------------------------- -->
+  <section class="montage" id="monter" aria-labelledby="titre-montage" data-montage>
+    <div class="montage__colle">
+      <div class="montage__scene" data-scene>
+        <img class="montage__affiche" src="img/maison-3d-1600.webp" srcset="img/maison-3d-800.webp 800w, img/maison-3d-1600.webp 1600w" sizes="100vw" width="1600" height="1000" alt="La maison terminée, bardée de douglas, à la tombée du jour" loading="lazy" decoding="async" data-affiche>
+        <canvas class="montage__canvas" role="img" aria-label="La maison en 3D, construite au fil du défilement" data-canvas></canvas>
+      </div>
+      <h2 class="montage__titre" id="titre-montage">Une maison se monte</h2>
+      <ol class="etapes" data-etapes>
+        <li class="etape" data-etape="0"><p class="etape__quand">Semaine 0</p><h3 class="etape__nom">Le terrain</h3><p class="etape__texte">On commence par marcher le terrain avec vous&#8239;: la pente, le soleil, les arbres qu’on garde.</p></li>
+        <li class="etape" data-etape="1"><p class="etape__quand">Semaines 1 et 2</p><h3 class="etape__nom">Les fondations</h3><p class="etape__texte">Des plots en béton plutôt qu’une dalle&#8239;: moins de béton, et le sol continue de respirer sous la maison.</p></li>
+        <li class="etape" data-etape="2"><p class="etape__quand">Semaine 3</p><h3 class="etape__nom">Le plancher</h3><p class="etape__texte">Les solives en épicéa et le plancher en panneaux sont posés en une journée.</p></li>
+        <li class="etape" data-etape="3"><p class="etape__quand">Semaine 4</p><h3 class="etape__nom">Les murs</h3><p class="etape__texte">Ils arrivent de l’atelier déjà assemblés, fenêtres réservées. Le rez-de-chaussée est debout le soir même.</p></li>
+        <li class="etape" data-etape="4"><p class="etape__quand">Semaine 5</p><h3 class="etape__nom">L’étage</h3><p class="etape__texte">Deuxième plancher, murs de l’étage et pignons, montés à quatre en deux jours.</p></li>
+        <li class="etape" data-etape="5"><p class="etape__quand">Semaine 6</p><h3 class="etape__nom">La charpente</h3><p class="etape__texte">Faîtière et chevrons en sapin. Plus de vingt mètres cubes de bois sont maintenant en place.</p></li>
+        <li class="etape" data-etape="6"><p class="etape__quand">Semaines 7 et 8</p><h3 class="etape__nom">Hors d’eau, hors d’air</h3><p class="etape__texte">Panneaux de fibre de bois tout autour et écran sous le toit&#8239;: la maison est fermée et isolée.</p></li>
+        <li class="etape" data-etape="7"><p class="etape__quand">Semaines 9 à 12</p><h3 class="etape__nom">Le bardage</h3><p class="etape__texte">Douglas brut en lames verticales, menuiseries bois et aluminium, bac acier sur le toit.</p></li>
+        <li class="etape" data-etape="8"><p class="etape__quand">Semaines 13 et 14</p><h3 class="etape__nom">Les clés</h3><p class="etape__texte">Terrasse, poêle et finitions intérieures. Le soir où vous emménagez, il reste l’odeur du sapin.</p></li>
+      </ol>
+      <dl class="compteurs" aria-live="off">
+        <div><dt>Bois mis en œuvre</dt><dd><span data-bois>38,4</span>&nbsp;m³</dd></div>
+        <div><dt>Carbone stocké dans le bois</dt><dd><span data-co2>35</span>&nbsp;t de CO<sub>2</sub></dd></div>
+      </dl>
+      <div class="avancement" aria-hidden="true"><span class="avancement__barre" data-avancement></span></div>
+    </div>
+  </section>
+
+  <!-- Les maisons --------------------------------------------------------------------- -->
+  <section class="maisons" id="maisons" aria-labelledby="titre-maisons">
+    <div class="tete">
+      <h2 class="titre-section" id="titre-maisons">Quatre maisons pour commencer</h2>
+      <p>Chacune se redessine pour votre terrain&#8239;: on déplace les murs, on ajoute une chambre, on tourne la maison vers le soleil. Prix clé en main, hors terrain et raccordements.</p>
+    </div>
+    <ul class="modeles" role="list">
+      <li class="modele">
+        <div class="modele__vue">
+          <img src="img/futaie-800.webp" srcset="img/futaie-800.webp 640w, img/futaie-1600.webp 1100w" sizes="(min-width: 900px) 45vw, 92vw" width="640" height="959" alt="Une maison en bois à toit monopente, au milieu des pins" loading="lazy" decoding="async">
+          <svg class="plan" viewBox="0 0 220 150" aria-hidden="true"><path class="plan__mur" pathLength="1" d="M10 10h200v130H10z"/><path class="plan__cloison" pathLength="1" d="M110 10v70h100M150 80v60M10 80h55M115 85h30v50h-30zM115 97h30M115 109h30M115 121h30"/><path class="plan__porte" pathLength="1" d="M70 140a20 20 0 0 1 20-20M110 50a14 14 0 0 1 14 14"/><text x="40" y="48">séjour</text><text x="22" y="112">cuisine</text><text x="152" y="48">chambre</text><text x="166" y="114">bain</text><text x="72" y="112">entrée</text></svg>
+        </div>
+        <div class="modele__texte">
+          <h3 class="modele__nom">La Futaie</h3>
+          <p class="modele__type">Maison à étage, toit monopente</p>
+          <dl class="modele__infos"><div><dt>Surface</dt><dd>118&nbsp;m²</dd></div><div><dt>Chambres</dt><dd>4</dd></div><div><dt>Chantier</dt><dd>15 semaines</dd></div></dl>
+          <p class="modele__prix">dès 289&nbsp;000&nbsp;€</p>
+          <button class="lien-fleche modele__plan" type="button" aria-pressed="false" data-plan>Voir le plan du rez-de-chaussée</button>
+        </div>
+      </li>
+      <li class="modele">
+        <div class="modele__vue">
+          <img src="img/refuge-800.webp" srcset="img/refuge-800.webp 800w, img/refuge-1600.webp 1600w" sizes="(min-width: 900px) 45vw, 92vw" width="800" height="533" alt="Un chalet en A aux grandes vitres, entre les arbres" loading="lazy" decoding="async">
+          <svg class="plan" viewBox="0 0 220 150" aria-hidden="true"><path class="plan__mur" pathLength="1" d="M30 15h160v110H30z"/><path class="plan__cloison" pathLength="1" d="M30 82h160M110 82v43M150 82v43"/><path class="plan__porte" pathLength="1" d="M95 15a15 15 0 0 0 15 15M30 135h160"/><text x="78" y="52">séjour et cuisine</text><text x="52" y="108">chambre</text><text x="118" y="108">bain</text><text x="156" y="108">chambre</text><text x="88" y="146">terrasse</text></svg>
+        </div>
+        <div class="modele__texte">
+          <h3 class="modele__nom">Le Refuge</h3>
+          <p class="modele__type">Chalet en A, pour un terrain boisé</p>
+          <dl class="modele__infos"><div><dt>Surface</dt><dd>64&nbsp;m²</dd></div><div><dt>Chambres</dt><dd>2</dd></div><div><dt>Chantier</dt><dd>10 semaines</dd></div></dl>
+          <p class="modele__prix">dès 168&nbsp;000&nbsp;€</p>
+          <button class="lien-fleche modele__plan" type="button" aria-pressed="false" data-plan>Voir le plan</button>
+        </div>
+      </li>
+      <li class="modele">
+        <div class="modele__vue">
+          <img src="img/grange-800.webp" srcset="img/grange-800.webp 800w, img/grange-1600.webp 1600w" sizes="(min-width: 900px) 45vw, 92vw" width="800" height="534" alt="Une maison au bardage noir avec un grand pignon et une baie triangulaire" loading="lazy" decoding="async">
+          <svg class="plan" viewBox="0 0 220 150" aria-hidden="true"><path class="plan__mur" pathLength="1" d="M10 20h200v110H10z"/><path class="plan__cloison" pathLength="1" d="M80 20v110M150 20v110M150 75h60M80 75h30"/><path class="plan__porte" pathLength="1" d="M115 130a16 16 0 0 1 16-16M150 95a14 14 0 0 1 14 14"/><text x="24" y="58">chambre</text><text x="24" y="108">chambre</text><text x="88" y="52">séjour</text><text x="164" y="52">cuisine</text><text x="166" y="108">bain</text></svg>
+        </div>
+        <div class="modele__texte">
+          <h3 class="modele__nom">La Grange</h3>
+          <p class="modele__type">Volume simple, grands pignons vitrés</p>
+          <dl class="modele__infos"><div><dt>Surface</dt><dd>136&nbsp;m²</dd></div><div><dt>Chambres</dt><dd>4</dd></div><div><dt>Chantier</dt><dd>16 semaines</dd></div></dl>
+          <p class="modele__prix">dès 312&nbsp;000&nbsp;€</p>
+          <button class="lien-fleche modele__plan" type="button" aria-pressed="false" data-plan>Voir le plan du rez-de-chaussée</button>
+        </div>
+      </li>
+      <li class="modele">
+        <div class="modele__vue">
+          <img src="img/echasse-800.webp" srcset="img/echasse-800.webp 640w, img/echasse-1600.webp 1100w" sizes="(min-width: 900px) 45vw, 92vw" width="640" height="960" alt="Une maison posée sur des poteaux, aux grandes fenêtres, sur un terrain en pente" loading="lazy" decoding="async">
+          <svg class="plan" viewBox="0 0 220 150" aria-hidden="true"><path class="plan__mur" pathLength="1" d="M20 15h180v120H20z"/><path class="plan__cloison" pathLength="1" d="M20 72h100M120 15v120M120 92h80"/><path class="plan__porte" pathLength="1" d="M120 50a14 14 0 0 1 14 14M60 135a16 16 0 0 1 16-16"/><text x="40" y="48">chambre</text><text x="40" y="108">chambre</text><text x="140" y="56">séjour</text><text x="144" y="120">cuisine</text></svg>
+        </div>
+        <div class="modele__texte">
+          <h3 class="modele__nom">L’Échasse</h3>
+          <p class="modele__type">Sur pilotis, pour les terrains en pente</p>
+          <dl class="modele__infos"><div><dt>Surface</dt><dd>96&nbsp;m²</dd></div><div><dt>Chambres</dt><dd>3</dd></div><div><dt>Chantier</dt><dd>13 semaines</dd></div></dl>
+          <p class="modele__prix">dès 246&nbsp;000&nbsp;€</p>
+          <button class="lien-fleche modele__plan" type="button" aria-pressed="false" data-plan>Voir le plan</button>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Le budget --------------------------------------------------------------------------- -->
+  <section class="budget" id="budget" aria-labelledby="titre-budget" data-budget>
+    <div class="tete">
+      <h2 class="titre-section" id="titre-budget">Combien coûte votre maison&#8239;?</h2>
+      <p>Une première idée en quatre réglages. Nous affinons ensuite avec votre terrain, sans engagement.</p>
+    </div>
+    <div class="budget__corps">
+      <div class="budget__reglages">
+        <div class="reglage">
+          <p class="reglage__tete"><label for="b-surface">Surface habitable</label><output class="reglage__valeur" for="b-surface" data-sortie="surface">110&nbsp;m²</output></p>
+          <input type="range" id="b-surface" min="60" max="200" step="5" value="110" data-b="surface">
+        </div>
+        <fieldset class="reglage">
+          <legend>Niveaux</legend>
+          <div class="segments">
+            <label><input type="radio" name="niveaux" value="1" data-b="niveaux"><span>Plain-pied</span></label>
+            <label><input type="radio" name="niveaux" value="2" checked data-b="niveaux"><span>À étage</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="reglage">
+          <legend>Jusqu’où nous allons</legend>
+          <div class="segments segments--3">
+            <label><input type="radio" name="finition" value="heha" data-b="finition"><span>Hors d’eau, hors d’air</span></label>
+            <label><input type="radio" name="finition" value="paf" data-b="finition"><span>Prête à finir</span></label>
+            <label><input type="radio" name="finition" value="cle" checked data-b="finition"><span>Clé en main</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="reglage">
+          <legend>Options</legend>
+          <div class="options">
+            <label class="option"><input type="checkbox" value="poele" data-b="option"><span>Poêle à bois</span><span class="option__prix">6&nbsp;500&nbsp;€</span></label>
+            <label class="option"><input type="checkbox" value="terrasse" data-b="option" checked><span>Terrasse de 25&nbsp;m²</span><span class="option__prix">9&nbsp;800&nbsp;€</span></label>
+            <label class="option"><input type="checkbox" value="solaire" data-b="option"><span>Panneaux solaires 3&nbsp;kWc</span><span class="option__prix">8&nbsp;900&nbsp;€</span></label>
+            <label class="option"><input type="checkbox" value="abri" data-b="option"><span>Abri voiture en bois</span><span class="option__prix">14&nbsp;000&nbsp;€</span></label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="budget__resultat" aria-live="polite">
+        <p class="budget__etiquette">Votre maison, clé en main</p>
+        <p class="budget__prix" data-prix>de 268&nbsp;000 à 296&nbsp;000&nbsp;€</p>
+        <div class="repartition" aria-hidden="true" data-repartition>
+          <span class="repartition__part" data-part="structure" style="flex-grow:38"></span>
+          <span class="repartition__part" data-part="enveloppe" style="flex-grow:24"></span>
+          <span class="repartition__part" data-part="finitions" style="flex-grow:34"></span>
+          <span class="repartition__part" data-part="options" style="flex-grow:4"></span>
+        </div>
+        <ul class="repartition__legende" role="list">
+          <li><i class="l-structure"></i>Ossature et charpente</li><li><i class="l-enveloppe"></i>Isolation, bardage, toit</li><li><i class="l-finitions"></i>Finitions intérieures</li><li><i class="l-options"></i>Options</li>
+        </ul>
+        <dl class="budget__chiffres">
+          <div><dt>Chantier</dt><dd data-duree>15 semaines</dd></div>
+          <div><dt>Bois</dt><dd data-mbois>31&nbsp;m³</dd></div>
+          <div><dt>CO<sub>2</sub> stocké</dt><dd data-mco2>28&nbsp;t</dd></div>
+        </dl>
+        <a class="bouton bouton--clair" href="#contact" data-vers-contact>Recevoir une étude de mon terrain</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- La forêt ---------------------------------------------------------------------------- -->
+  <section class="foret" id="foret" aria-labelledby="titre-foret">
+    <video class="foret__video" data-video-lazy muted loop playsinline preload="none" aria-hidden="true" poster="media/foret-poster-1280.webp" data-src="media/foret-1280.mp4" width="1024" height="576"></video>
+    <div class="foret__contenu">
+      <h2 class="titre-section" id="titre-foret">Nos arbres poussent à trente kilomètres</h2>
+      <p>Sapin, épicéa et douglas viennent des forêts gérées des Vosges du Nord. La scierie de la vallée les débite, notre atelier les sèche, les rabote et les assemble. Rien ne traverse l’Europe en camion.</p>
+      <dl class="chiffres" data-chiffres>
+        <div><dt>entre la forêt et l’atelier</dt><dd><span data-compte="30">30</span>&nbsp;km</dd></div>
+        <div><dt>maisons construites depuis 1994</dt><dd><span data-compte="412">412</span></dd></div>
+        <div><dt>de CO<sub>2</sub> stockée par mètre cube de bois, environ</dt><dd><span data-compte="0.9" data-decimales="1">0,9</span>&nbsp;t</dd></div>
+        <div><dt>charpentiers et menuisiers salariés</dt><dd><span data-compte="23">23</span></dd></div>
+      </dl>
+    </div>
+    <button class="pause foret__pause" type="button" data-pause=".foret__video" aria-pressed="false"><span class="sr">Mettre la vidéo en pause</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="i-pause" d="M8 5h3v14H8zM13 5h3v14h-3z"/><path class="i-lecture" d="M8 5l11 7-11 7z"/></svg></button>
+  </section>
+
+  <!-- Sur nos chantiers ------------------------------------------------------------------- -->
+  <section class="chantiers" aria-labelledby="titre-chantiers">
+    <div class="tete tete--ligne">
+      <h2 class="titre-section" id="titre-chantiers">Sur nos chantiers</h2>
+      <p class="chantiers__fleches"><button class="fleche" type="button" data-defiler="-1"><span class="sr">Photos précédentes</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button class="fleche" type="button" data-defiler="1"><span class="sr">Photos suivantes</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></p>
+    </div>
+    <ul class="galerie" role="list" data-galerie tabindex="0" aria-label="Photos de chantier, à faire défiler">
+      <li><figure><img src="img/chantier-levage-800.webp" srcset="img/chantier-levage-800.webp 640w, img/chantier-levage-1600.webp 1100w" sizes="(min-width: 900px) 26vw, 70vw" width="640" height="1136" alt="Deux charpentiers lèvent un mur d’ossature sur un échafaudage" loading="lazy" decoding="async"><figcaption>Levage d’un mur préfabriqué, le matin du troisième jour.</figcaption></figure></li>
+      <li><figure><img src="img/chantier-ciel-800.webp" srcset="img/chantier-ciel-800.webp 800w, img/chantier-ciel-1600.webp 1600w" sizes="(min-width: 900px) 40vw, 86vw" width="800" height="533" alt="L’ossature en bois d’une maison à étage, contre un ciel bleu" loading="lazy" decoding="async"><figcaption>L’étage est posé&#8239;: on attend la charpente.</figcaption></figure></li>
+      <li class="galerie__video"><figure><video data-video-lazy muted loop playsinline preload="none" aria-hidden="true" poster="media/chantier-poster-800.webp" data-src="media/chantier-800.mp4" width="800" height="450"></video><figcaption>Contrôle des réservations avant la pose des menuiseries.</figcaption></figure></li>
+      <li><figure><img src="img/chantier-ossature-800.webp" srcset="img/chantier-ossature-800.webp 640w, img/chantier-ossature-1600.webp 1100w" sizes="(min-width: 900px) 26vw, 70vw" width="640" height="854" alt="Les montants et les lisses d’une ossature, vus en contre-plongée" loading="lazy" decoding="async"><figcaption>Montants tous les 60&nbsp;cm, comme sur la maquette.</figcaption></figure></li>
+      <li><figure><img src="img/chantier-membrane-800.webp" srcset="img/chantier-membrane-800.webp 800w, img/chantier-membrane-1600.webp 1600w" sizes="(min-width: 900px) 40vw, 86vw" width="800" height="451" alt="Des gouttes de pluie sur la membrane qui protège un mur en bois" loading="lazy" decoding="async"><figcaption>Il pleut&#8239;: le pare-pluie fait son travail.</figcaption></figure></li>
+      <li><figure><img src="img/bardage-800.webp" srcset="img/bardage-800.webp 640w, img/bardage-1600.webp 1100w" sizes="(min-width: 900px) 26vw, 70vw" width="640" height="1157" alt="Un bardage en lames de bois verticales autour d’une grande fenêtre" loading="lazy" decoding="async"><figcaption>Bardage douglas, deux ans après la pose.</figcaption></figure></li>
+      <li><figure><img src="img/refuge-interieur-800.webp" srcset="img/refuge-interieur-800.webp 640w, img/refuge-interieur-1600.webp 1100w" sizes="(min-width: 900px) 26vw, 70vw" width="640" height="959" alt="L’intérieur d’un chalet en A, une grande baie ouverte sur les arbres" loading="lazy" decoding="async"><figcaption>Le Refuge, une fois habité.</figcaption></figure></li>
+    </ul>
+  </section>
+
+  <!-- Contact ----------------------------------------------------------------------------- -->
+  <section class="contact" id="contact" aria-labelledby="titre-contact">
+    <div class="contact__texte">
+      <h2 class="titre-section" id="titre-contact">Parlons de votre terrain</h2>
+      <p>Racontez-nous où il se trouve et ce que vous imaginez. Un conducteur de travaux vous rappelle sous trois jours ouvrés, et vient le voir avec vous si vous le souhaitez.</p>
+      <div class="visites" data-visites>
+        <h3 class="visites__titre">Visiter une maison habitée</h3>
+        <p data-visites-texte>Deux samedis par mois, des propriétaires nous ouvrent leur maison. Demandez les prochaines dates.</p>
+      </div>
+      <p class="contact__coord"><a href="tel:+33353013890">03&nbsp;53&nbsp;01&nbsp;38&nbsp;90</a><br><a href="mailto:contact@holzmatt.example">contact@holzmatt.example</a><br>Zone artisanale de la Scierie, 67340 Ingwiller</p>
+    </div>
+    <form class="formulaire" action="mailto:contact@holzmatt.example" method="post" enctype="text/plain" data-formulaire>
+      <div class="champ"><label for="f-nom">Nom</label><input id="f-nom" name="nom" type="text" autocomplete="name" required></div>
+      <div class="champ"><label for="f-commune">Commune du terrain</label><input id="f-commune" name="commune" type="text" autocomplete="address-level2" required></div>
+      <div class="champ champ--demi"><label for="f-surface">Surface du terrain</label><input id="f-surface" name="surface" type="text" inputmode="numeric" placeholder="en m²"></div>
+      <div class="champ champ--demi"><label for="f-modele">Maison qui vous plaît</label><select id="f-modele" name="modele"><option>Pas encore d’idée</option><option>La Futaie</option><option>Le Refuge</option><option>La Grange</option><option>L’Échasse</option></select></div>
+      <div class="champ"><label for="f-message">Votre projet</label><textarea id="f-message" name="message" rows="5" data-message></textarea></div>
+      <button class="bouton" type="submit">Envoyer ma demande</button>
+      <p class="formulaire__aide">Le bouton ouvre votre messagerie avec votre demande déjà rédigée. Rien n’est envoyé sans vous.</p>
+    </form>
+  </section>
+</main>
+
+<footer class="pied">
+  <p class="pied__nom" aria-hidden="true">Holzmatt</p>
+  <div class="pied__in">
+    <p><strong>Holzmatt, maisons à ossature bois</strong><br>Zone artisanale de la Scierie<br>67340 Ingwiller</p>
+    <p><a href="tel:+33353013890">03&nbsp;53&nbsp;01&nbsp;38&nbsp;90</a><br><a href="mailto:contact@holzmatt.example">contact@holzmatt.example</a></p>
+    <p>Atelier ouvert du lundi au vendredi, de 7&nbsp;h&nbsp;30 à 17&nbsp;h. Garantie décennale, assurance dommages-ouvrage proposée.</p>
+    <p class="pied__liens"><a href="mentions-legales.html">Mentions légales et crédits</a><a href="#haut">Revenir en haut</a></p>
+  </div>
+</footer>
+<p class="sr" aria-live="polite" data-annonce></p>
+</body>
+</html>

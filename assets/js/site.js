@@ -169,6 +169,45 @@
     }
   });
 
+  /* Sites premium de l'accueil : un onglet par site ------------------
+     L'onglet change la vidéo du cadre, l'adresse, la capture du téléphone et le lien.
+     Flèches gauche/droite, Début et Fin pour passer d'un onglet à l'autre. */
+  var prem = doc.querySelector('[data-premium]');
+  if (prem) {
+    var onglets = prem.querySelectorAll('[data-onglet]');
+    var pVideo = prem.querySelector('[data-video-vitrine]'), pUrl = prem.querySelector('[data-premium-url]'), pLien = prem.querySelector('[data-premium-lien]'), pPanneau = prem.querySelector('[role="tabpanel"]');
+    var choisirOnglet = function (t, focus) {
+      if (t.getAttribute('aria-selected') === 'true') { if (focus) t.focus(); return; }
+      each(onglets, function (x) { var on = x === t; x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1; });
+      pPanneau.setAttribute('aria-labelledby', t.id);
+      if (pUrl) pUrl.textContent = t.getAttribute('data-url');
+      if (pLien) { pLien.href = t.getAttribute('data-lien'); pLien.textContent = t.getAttribute('data-cta'); }
+      each(prem.querySelectorAll('[data-tel]'), function (tel) { tel.hidden = tel.getAttribute('data-tel') !== t.getAttribute('data-onglet'); });
+      if (pVideo) {
+        var enLecture = !pVideo.paused;
+        pVideo.classList.add('est-change');
+        setTimeout(function () {
+          pVideo.poster = t.getAttribute('data-poster');
+          pVideo.setAttribute('data-src', t.getAttribute('data-clip'));
+          if (pVideo.getAttribute('src')) { pVideo.src = t.getAttribute('data-clip'); if (enLecture) { var pr = pVideo.play(); if (pr && pr.catch) pr.catch(function () {}); } }
+          pVideo.classList.remove('est-change');
+        }, reduceMotion ? 0 : 160);
+      }
+      if (focus) t.focus();
+    };
+    each(onglets, function (t, i) {
+      t.addEventListener('click', function () { choisirOnglet(t); });
+      t.addEventListener('keydown', function (e) {
+        var n = onglets.length, j = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') j = (i + 1) % n;
+        else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') j = (i - 1 + n) % n;
+        else if (e.key === 'Home') j = 0;
+        else if (e.key === 'End') j = n - 1;
+        if (j !== null) { e.preventDefault(); choisirOnglet(onglets[j], true); }
+      });
+    });
+  }
+
   /* Apparition des sections au défilement -----------------------------
      Rien n'est masqué sans JavaScript ni quand le mouvement est réduit : la classe .anim
      n'est posée qu'ici, après avoir marqué comme visibles les éléments déjà à l'écran.
