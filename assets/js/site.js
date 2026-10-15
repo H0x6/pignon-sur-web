@@ -88,7 +88,35 @@
     { duration: 200, easing: EASE_OUT });
   }
 
-  window.PSW_UI = { vt: vt, tick: tick, appear: appear, instant: instant, byKeyboard: byKeyboard, reduceMotion: reduceMotion, EASE_OUT: EASE_OUT, EASE_IN_OUT: EASE_IN_OUT };
+  /* Mesure d'audience sans cookie (Umami ou Plausible, si réglée dans site.config.json) --------
+     mesure('Demande de maquette', { formule: '…' }) envoie un évènement ; sans outil, rien ne se passe.
+     « depuis » : la page du site d'où vient le visiteur (pour savoir quelles pages amènent des demandes). */
+  function depuis() {
+    try {
+      var r = doc.referrer ? new URL(doc.referrer) : null;
+      if (r && r.host === location.host) return r.pathname.replace(/^.*\//, '') || 'index.html';
+      return r ? 'externe : ' + r.host.replace(/^www\./, '') : 'accès direct';
+    } catch (err) { return ''; }
+  }
+  function mesure(nom, props) {
+    props = props || {};
+    try {
+      if (window.umami && typeof window.umami.track === 'function') window.umami.track(nom, props);
+      else if (typeof window.plausible === 'function') window.plausible(nom, { props: props });
+    } catch (err) { /* la mesure ne doit jamais gêner la page */ }
+  }
+  // Clics à mesurer : liens marqués data-mesure, adresses e-mail et numéros de téléphone
+  doc.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href], button[data-mesure]') : null;
+    if (!a) return;
+    var page = location.pathname.replace(/^.*\//, '') || 'index.html';
+    var h = a.getAttribute('href') || '';
+    if (a.hasAttribute('data-mesure')) mesure(a.getAttribute('data-mesure'), { page: page });
+    else if (/^mailto:/.test(h)) mesure('Clic e-mail', { page: page });
+    else if (/^tel:/.test(h)) mesure('Clic téléphone', { page: page });
+  }, true);
+
+  window.PSW_UI = { vt: vt, tick: tick, appear: appear, instant: instant, byKeyboard: byKeyboard, reduceMotion: reduceMotion, EASE_OUT: EASE_OUT, EASE_IN_OUT: EASE_IN_OUT, mesure: mesure, depuis: depuis };
 
   /* Menu mobile ------------------------------------------------------ */
   var header = doc.querySelector('.site-header');

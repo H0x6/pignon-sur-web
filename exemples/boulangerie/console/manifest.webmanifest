@@ -1,0 +1,9 @@
+{
+  "name": "Console Maison Brindel",
+  "short_name": "Mon site",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2D4E8A",
+  "icons": []
+}

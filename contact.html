@@ -13,7 +13,7 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=3177026c19">
+<link rel="stylesheet" href="assets/css/site.css?v=68c56ad996">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Pignon sur Web">
@@ -27,8 +27,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://www.pignonsurweb.fr/#entreprise","name":"Pignon sur Web","description":"Refonte de sites web pour les commerces et entreprises locales","url":"https://www.pignonsurweb.fr/","image":"https://www.pignonsurweb.fr/assets/img/og-image.png","logo":"https://www.pignonsurweb.fr/assets/img/logo.svg","priceRange":"À partir de 490 €","currenciesAccepted":"EUR","areaServed":[{"@type":"Place","name":"Haut-Rhin"},{"@type":"Place","name":"Alsace"},{"@type":"Place","name":"France"}],"knowsLanguage":"fr","email":"contact@pignonsurweb.fr","address":{"@type":"PostalAddress","addressCountry":"FR","addressRegion":"Grand Est"}}</script>
 <script>document.documentElement.classList.add('js')</script>
-<script src="assets/js/site.js?v=b41c506f09" defer></script>
-<script src="assets/js/contact.js?v=c5b1352bb3" defer></script>
+<script src="assets/js/site.js?v=9aedbc3ea1" defer></script>
+<script src="assets/js/contact.js?v=1ad4a8987e" defer></script>
+<script src="assets/js/rdv.js?v=1f34a12ad3" defer></script>
 </head>
 <body class="page-contact">
 <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -48,6 +49,7 @@
     <div class="page-une__texte">
       <h1>Demander ma maquette</h1>
       <p class="lead">Envoyez-moi le lien de votre site actuel, ou vos informations si vous n'en avez pas. Je vous réponds sous 2 jours ouvrés. La maquette est gratuite et sans engagement.</p>
+      <p class="page-une__actions"><a class="link-arrow" href="#rendez-vous">Vous préférez en parler ? Demandez à être rappelé</a></p>
     </div>
     <figure class="page-une__photo"><img class="page-une__img" src="assets/img/photos/entree-boutique-800.webp" srcset="assets/img/photos/entree-boutique-480.webp 480w, assets/img/photos/entree-boutique-800.webp 800w, assets/img/photos/entree-boutique-1200.webp 1200w" sizes="(min-width: 56rem) 26rem, 20rem" alt="" width="800" height="1067" fetchpriority="high" decoding="async"></figure>
   </div>
@@ -138,6 +140,9 @@
 
         <input type="hidden" name="formule" value="">
         <input type="hidden" name="form-name" value="maquette">
+        <input type="hidden" name="_subject" value="Demande de maquette">
+        <input type="hidden" name="reference" value="">
+        <input type="hidden" name="depuis" value="">
         <div class="hp" aria-hidden="true">
           <label for="f-gotcha">Ne remplissez pas ce champ</label>
           <input id="f-gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
@@ -162,6 +167,39 @@
     </div>
 
     <aside class="contact-aside" aria-label="Informations pratiques">
+      <section class="aside-card rdv" id="rendez-vous" aria-labelledby="titre-rdv">
+  <h2 id="titre-rdv">Être rappelé</h2>
+  <p>Vous préférez en parler de vive voix ? Laissez votre numéro et le moment qui vous arrange : je vous appelle pour 15 minutes, sans engagement.</p>
+  <form class="rappel" id="form-rappel" action="mailto:contact@pignonsurweb.fr?subject=Demande%20de%20rappel" method="post" enctype="text/plain" novalidate data-endpoint="" data-email="contact@pignonsurweb.fr">
+    <div class="field">
+      <label class="field__label" for="r-nom">Votre nom</label>
+      <input class="input" id="r-nom" name="nom" type="text" autocomplete="name" required aria-describedby="err-r-nom">
+      <p class="field__error" id="err-r-nom" hidden></p>
+    </div>
+    <div class="field">
+      <label class="field__label" for="r-tel">Votre téléphone</label>
+      <input class="input" id="r-tel" name="telephone" type="tel" autocomplete="tel" required aria-describedby="err-r-tel">
+      <p class="field__error" id="err-r-tel" hidden></p>
+    </div>
+    <div class="field">
+      <label class="field__label" for="r-creneau">Le meilleur moment</label>
+      <select class="input" id="r-creneau" name="creneau"><option>En semaine, entre 12 h et 14 h</option><option>En semaine, après 18 h</option><option>Le samedi matin</option><option>Peu importe</option></select>
+    </div>
+    <input type="hidden" name="form-name" value="rappel">
+    <input type="hidden" name="_subject" value="Demande de rappel">
+    <input type="hidden" name="reference" value="">
+    <div class="hp" aria-hidden="true"><label for="r-gotcha">Ne remplissez pas ce champ</label><input id="r-gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
+    <div class="check-field">
+      <div class="check">
+        <input id="r-consent" name="consentement" type="checkbox" value="oui" required aria-describedby="err-r-consent">
+        <label for="r-consent">J'accepte d'être rappelé à ce numéro (voir la <a href="confidentialite.html">politique de confidentialité</a>).</label>
+      </div>
+      <p class="field__error" id="err-r-consent" hidden></p>
+    </div>
+    <div class="form-status" id="rappel-status" role="status" tabindex="-1"></div>
+    <button class="btn btn--secondary btn--block" type="submit">Me faire rappeler</button>
+  </form>
+</section>
       <div class="aside-card">
         <h2>Ce qui se passe ensuite</h2>
         <ol class="aside-steps" role="list">
@@ -189,7 +227,7 @@
     </aside>
   </div>
 </section>
-<script type="application/json" id="contact-data">{"email":"contact@pignonsurweb.fr","formEndpoint":"","nom":"Pignon sur Web","polices":[{"id":"gare","nom":"Brasserie","description":"Titres Bodoni Moda, texte Karla"},{"id":"comptoir","nom":"Joyeuse","description":"Titres et texte Bricolage Grotesque"},{"id":"emaillee","nom":"Émaillée","description":"Titres Alfa Slab One, texte Archivo"},{"id":"fournil","nom":"Fournée","description":"Titres Young Serif, texte Figtree"},{"id":"trace","nom":"Tracé","description":"Titres et texte Epilogue, cotes en IBM Plex Mono"},{"id":"atelier-meca","nom":"Mécanique","description":"Titres Barlow Condensed, texte Barlow"},{"id":"galet","nom":"Douce","description":"Titres Cormorant Garamond, texte Jost"},{"id":"dossier","nom":"Sobre","description":"Titres Newsreader, texte Public Sans"}],"gabarits":[{"id":"bistrot","nom":"Bistrot","palettes":[{"nom":"Quai","fond":"#F3EDE2","accent":"#1F4A39","secondaire":"#B88A3E"},{"nom":"Bordeaux","fond":"#F6EFEA","accent":"#7A2232","secondaire":"#C29A4B"},{"nom":"Nuit","fond":"#141C18","accent":"#D4AE5C","secondaire":"#7FA895"}]},{"id":"comptoir","nom":"Comptoir","palettes":[{"nom":"Bergamote","fond":"#FFF9EE","accent":"#0F5450","secondaire":"#F08A4B"},{"nom":"Pistache","fond":"#F6FAF0","accent":"#3F6B2A","secondaire":"#F2C14E"},{"nom":"Framboise","fond":"#FFF6F6","accent":"#B3264A","secondaire":"#F7B267"}]},{"id":"etal","nom":"Étal","palettes":[{"nom":"Tradition","fond":"#FFFFFF","accent":"#A11D21","secondaire":"#1D3A6B"},{"nom":"Ardoise","fond":"#1C1F22","accent":"#E04A3F","secondaire":"#D9B44A"},{"nom":"Moutarde","fond":"#FFFDF7","accent":"#2E3B2C","secondaire":"#D9A21B"}]},{"id":"fournil","nom":"Fournil","palettes":[{"nom":"Farine","fond":"#FBF8F2","accent":"#8C4A1F","secondaire":"#D9B26A"},{"nom":"Seigle","fond":"#251B15","accent":"#E0A458","secondaire":"#A86B3C"},{"nom":"Bleuet","fond":"#F7F8FB","accent":"#2D4E8A","secondaire":"#E6B85C"}]},{"id":"atelier","nom":"Atelier","palettes":[{"nom":"Chêne","fond":"#F4F1EB","accent":"#2F4A3E","secondaire":"#C08F57"},{"nom":"Plan","fond":"#10283F","accent":"#F2C14E","secondaire":"#7FA7C9"},{"nom":"Noyer","fond":"#FAF8F5","accent":"#5C3A24","secondaire":"#B9A27F"}]},{"id":"moteur","nom":"Moteur","palettes":[{"nom":"Signal","fond":"#F1F1EE","accent":"#C4400D","secondaire":"#FFC21A"},{"nom":"Bleu atelier","fond":"#F3F5F8","accent":"#1748B8","secondaire":"#FFB703"},{"nom":"Asphalte","fond":"#121416","accent":"#FF7A1A","secondaire":"#FFD23F"}]},{"id":"serenite","nom":"Sérénité","palettes":[{"nom":"Galet","fond":"#F5F2EC","accent":"#5F6F5A","secondaire":"#CDB49E"},{"nom":"Poudre","fond":"#FBF5F3","accent":"#9B5363","secondaire":"#D9B8A8"},{"nom":"Nuit","fond":"#1F1A1D","accent":"#C9A27E","secondaire":"#8C9A86"}]},{"id":"cabinet","nom":"Cabinet","palettes":[{"nom":"Marine","fond":"#F7F7F4","accent":"#1F3A68","secondaire":"#B08D57"},{"nom":"Bordeaux","fond":"#FAF8F6","accent":"#6E1F2E","secondaire":"#A88B5A"},{"nom":"Graphite","fond":"#F5F6F7","accent":"#2B3640","secondaire":"#4E8F8B"}]}],"formules":[{"id":"catalogue","nom":"Design du catalogue"},{"id":"personnalise","nom":"Design personnalisé"},{"id":"sur-mesure","nom":"Refonte sur mesure"}],"supplements":[{"id":"referencement-local","nom":"Référencement local"}],"maintenance":[{"id":"essentiel","nom":"Essentiel"},{"id":"standard","nom":"Standard"},{"id":"plus","nom":"Plus"}]}</script>
+<script type="application/json" id="contact-data">{"email":"contact@pignonsurweb.fr","formEndpoint":"","nom":"Pignon sur Web","polices":[{"id":"gare","nom":"Brasserie","description":"Titres Bodoni Moda, texte Karla"},{"id":"comptoir","nom":"Joyeuse","description":"Titres et texte Bricolage Grotesque"},{"id":"emaillee","nom":"Émaillée","description":"Titres Alfa Slab One, texte Archivo"},{"id":"fournil","nom":"Fournée","description":"Titres Young Serif, texte Figtree"},{"id":"trace","nom":"Tracé","description":"Titres et texte Epilogue, cotes en IBM Plex Mono"},{"id":"atelier-meca","nom":"Mécanique","description":"Titres Barlow Condensed, texte Barlow"},{"id":"galet","nom":"Douce","description":"Titres Cormorant Garamond, texte Jost"},{"id":"dossier","nom":"Sobre","description":"Titres Newsreader, texte Public Sans"}],"gabarits":[{"id":"bistrot","nom":"Bistrot","palettes":[{"nom":"Quai","fond":"#F3EDE2","accent":"#1F4A39","secondaire":"#B88A3E"},{"nom":"Bordeaux","fond":"#F6EFEA","accent":"#7A2232","secondaire":"#C29A4B"},{"nom":"Nuit","fond":"#141C18","accent":"#D4AE5C","secondaire":"#7FA895"}]},{"id":"comptoir","nom":"Comptoir","palettes":[{"nom":"Bergamote","fond":"#FFF9EE","accent":"#0F5450","secondaire":"#F08A4B"},{"nom":"Pistache","fond":"#F6FAF0","accent":"#3F6B2A","secondaire":"#F2C14E"},{"nom":"Framboise","fond":"#FFF6F6","accent":"#B3264A","secondaire":"#F7B267"}]},{"id":"etal","nom":"Étal","palettes":[{"nom":"Tradition","fond":"#FFFFFF","accent":"#A11D21","secondaire":"#1D3A6B"},{"nom":"Ardoise","fond":"#1C1F22","accent":"#E04A3F","secondaire":"#D9B44A"},{"nom":"Moutarde","fond":"#FFFDF7","accent":"#2E3B2C","secondaire":"#D9A21B"}]},{"id":"fournil","nom":"Fournil","palettes":[{"nom":"Farine","fond":"#FBF8F2","accent":"#8C4A1F","secondaire":"#D9B26A"},{"nom":"Seigle","fond":"#251B15","accent":"#E0A458","secondaire":"#A86B3C"},{"nom":"Bleuet","fond":"#F7F8FB","accent":"#2D4E8A","secondaire":"#E6B85C"}]},{"id":"atelier","nom":"Atelier","palettes":[{"nom":"Chêne","fond":"#F4F1EB","accent":"#2F4A3E","secondaire":"#C08F57"},{"nom":"Plan","fond":"#10283F","accent":"#F2C14E","secondaire":"#7FA7C9"},{"nom":"Noyer","fond":"#FAF8F5","accent":"#5C3A24","secondaire":"#B9A27F"}]},{"id":"moteur","nom":"Moteur","palettes":[{"nom":"Signal","fond":"#F1F1EE","accent":"#C4400D","secondaire":"#FFC21A"},{"nom":"Bleu atelier","fond":"#F3F5F8","accent":"#1748B8","secondaire":"#FFB703"},{"nom":"Asphalte","fond":"#121416","accent":"#FF7A1A","secondaire":"#FFD23F"}]},{"id":"serenite","nom":"Sérénité","palettes":[{"nom":"Galet","fond":"#F5F2EC","accent":"#5F6F5A","secondaire":"#CDB49E"},{"nom":"Poudre","fond":"#FBF5F3","accent":"#9B5363","secondaire":"#D9B8A8"},{"nom":"Nuit","fond":"#1F1A1D","accent":"#C9A27E","secondaire":"#8C9A86"}]},{"id":"cabinet","nom":"Cabinet","palettes":[{"nom":"Marine","fond":"#F7F7F4","accent":"#1F3A68","secondaire":"#B08D57"},{"nom":"Bordeaux","fond":"#FAF8F6","accent":"#6E1F2E","secondaire":"#A88B5A"},{"nom":"Graphite","fond":"#F5F6F7","accent":"#2B3640","secondaire":"#4E8F8B"}]}],"formules":[{"id":"catalogue","nom":"Design du catalogue"},{"id":"personnalise","nom":"Design personnalisé"},{"id":"sur-mesure","nom":"Refonte sur mesure"}],"supplements":[{"id":"referencement-local","nom":"Référencement local"},{"id":"console","nom":"Console : vos changements vous-même"},{"id":"commande","nom":"Commande à retirer"},{"id":"langue","nom":"Version allemande ou anglaise"},{"id":"qr","nom":"QR codes à imprimer"}],"maintenance":[{"id":"essentiel","nom":"Essentiel"},{"id":"standard","nom":"Standard"},{"id":"plus","nom":"Plus"}]}</script>
 </main>
 <footer class="site-footer">
   <div class="wrap site-footer__grid">

@@ -1,0 +1,9 @@
+{
+  "name": "Console Le Petit Wagon",
+  "short_name": "Mon site",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1F4A39",
+  "icons": []
+}

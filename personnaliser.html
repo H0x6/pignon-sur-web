@@ -13,8 +13,8 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=3177026c19">
-<link rel="stylesheet" href="assets/css/personnaliser.css?v=e641381942">
+<link rel="stylesheet" href="assets/css/site.css?v=68c56ad996">
+<link rel="stylesheet" href="assets/css/personnaliser.css?v=380684270a">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Pignon sur Web">
@@ -28,9 +28,9 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <script>document.documentElement.classList.add('js')</script>
-<script src="assets/js/site.js?v=b41c506f09" defer></script>
+<script src="assets/js/site.js?v=9aedbc3ea1" defer></script>
 <script src="assets/js/tpl-render.js?v=974d72d600" defer></script>
-<script src="assets/js/personnaliser.js?v=70134c4a22" defer></script>
+<script src="assets/js/personnaliser.js?v=0910f59561" defer></script>
 </head>
 <body class="page-personnaliser">
 <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -69,8 +69,14 @@
           <legend class="field__label">Palette</legend>
           <div class="cz__palettes-liste" id="cz-palettes"></div>
         </fieldset>
+        <div class="field cz__logo">
+          <label class="field__label" for="cz-logo">Votre logo <span class="field__opt">(facultatif)</span></label>
+          <input class="cz__fichier" id="cz-logo" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml,image/gif" aria-describedby="cz-logo-aide">
+          <p class="field__hint" id="cz-logo-aide">Il s'affiche dans l'aperçu et je reprends sa couleur. Il reste sur votre appareil : rien n'est envoyé.</p>
+          <div class="cz__teintes" id="cz-teintes" hidden><p class="cz__teintes-titre" id="cz-teintes-titre">Les couleurs de votre logo</p><div class="cz__teintes-liste" role="group" aria-labelledby="cz-teintes-titre"></div></div>
+        </div>
         <div class="field cz__accent">
-          <label class="field__label" for="cz-accent">Ou la couleur de votre logo</label>
+          <label class="field__label" for="cz-accent">Ou la couleur de votre choix</label>
           <div class="cz__accent-ligne">
             <input class="cz__couleur" type="color" id="cz-accent" aria-describedby="cz-accent-aide cz-accent-verif">
             <button class="cz__retirer" type="button" id="cz-accent-retirer" hidden>Revenir à la palette</button>
@@ -80,7 +86,12 @@
         </div>
         <div class="cz__actions">
           <a class="btn btn--block" id="cz-veux" href="contact.html">Je veux ce design</a>
-          <button class="btn btn--secondary btn--block" type="button" id="cz-copier">Copier le lien de cet aperçu</button>
+          <div class="cz__partage">
+            <a class="btn btn--secondary" id="cz-email" href="#">Envoyer par e-mail</a>
+            <button class="btn btn--secondary" type="button" id="cz-partager" hidden>Partager</button>
+            <button class="btn btn--secondary" type="button" id="cz-copier">Copier le lien</button>
+          </div>
+          <p class="field__hint">Pour le montrer à un associé ou le garder pour plus tard. Le logo n'est pas dans le lien.</p>
           <p class="cz__copie" id="cz-copie" role="status"></p>
         </div>
       </div>
