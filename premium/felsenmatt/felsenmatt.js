@@ -781,4 +781,46 @@
     if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { visible = e[0].isIntersecting; relancer(); }, { threshold: 0.4 }).observe(scene);
     montrer(0);
   })();
+
+  /* Bandeau « site d'exemple » : en haut de la page, puis une version compacte qui redescend dès que l'on remonte
+     (et repart quand on redescend). L'en-tête collant du site glisse dessous (--demo-dec). Le bandeau d'origine
+     reste le seul lu par les lecteurs d'écran et atteint au clavier : la copie flottante sert à la souris et au doigt. */
+  (function () {
+    var bar = document.querySelector('[data-demo-bar]');
+    if (!bar || !window.requestAnimationFrame) return;
+    var racine = document.documentElement;
+    var f = document.createElement('div');
+    f.className = 'demo-flottant';
+    f.setAttribute('aria-hidden', 'true');
+    var retour = bar.querySelector('.pv-demo-retour, .demo__retour');
+    var liens = bar.querySelectorAll('a');
+    var dernier = liens.length ? liens[liens.length - 1] : null;
+    if (retour) f.appendChild(retour.cloneNode(true));
+    var txt = document.createElement('span');
+    txt.className = 'demo-flottant__texte';
+    txt.innerHTML = '<span class="demo-flottant__long"></span><span class="demo-flottant__mini"></span>';
+    txt.firstChild.textContent = bar.getAttribute('data-demo-court') || '';
+    txt.lastChild.textContent = bar.getAttribute('aria-label') || '';
+    f.appendChild(txt);
+    if (dernier && dernier !== retour) { var c = dernier.cloneNode(true); c.classList.add('demo-flottant__action'); f.appendChild(c); }
+    Array.prototype.forEach.call(f.querySelectorAll('a'), function (a) { a.setAttribute('tabindex', '-1'); });
+    document.body.appendChild(f);
+    var y0 = window.scrollY, visible = false, prevu = false;
+    function montrer(v) {
+      if (v === visible) return;
+      visible = v;
+      f.classList.toggle('est-visible', v);
+      racine.style.setProperty('--demo-dec', v ? f.offsetHeight + 'px' : '0px');
+    }
+    function maj() {
+      prevu = false;
+      var y = window.scrollY, bas = bar.getBoundingClientRect().bottom + y;
+      if (y <= bas) montrer(false);
+      else if (y < y0 - 6) montrer(true);
+      else if (y > y0 + 6) montrer(false);
+      if (Math.abs(y - y0) > 6) y0 = y;
+    }
+    window.addEventListener('scroll', function () { if (!prevu) { prevu = true; requestAnimationFrame(maj); } }, { passive: true });
+    window.addEventListener('resize', function () { if (visible) racine.style.setProperty('--demo-dec', f.offsetHeight + 'px'); });
+  })();
 })();

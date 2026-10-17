@@ -137,7 +137,7 @@
   function mailtoHref() {
     var f = form.elements;
     var val = function (n) { return (f[n].value || '').trim(); };
-    var gab = f.gabarit.options[f.gabarit.selectedIndex];
+    var gab = gabLibelle();
     var body = [
       'Bonjour,',
       '',
@@ -149,7 +149,7 @@
       'Téléphone : ' + (val('telephone') || 'non précisé'),
       'Site actuel : ' + (val('site') || 'aucun'),
       'Secteur : ' + val('secteur'),
-      'Gabarit souhaité : ' + (gab ? gab.text : 'je ne sais pas encore'),
+      'Design souhaité : ' + (gab || 'je ne sais pas encore'),
       val('formule') ? 'Formule envisagée : ' + val('formule') : '',
       'Référence : ' + val('reference'),
       val('personnalisation') ? '\nPersonnalisation :\n' + val('personnalisation') : '',
@@ -158,6 +158,12 @@
       val('message')
     ].filter(function (l) { return l !== ''; }).join('\n');
     return 'mailto:' + cfg.email + '?subject=' + encodeURIComponent('Demande de maquette : ' + val('entreprise')) + '&body=' + encodeURIComponent(body);
+  }
+
+  // Libellé du design choisi (cartes du formulaire) ; vide pour « Je ne sais pas encore »
+  function gabLibelle() {
+    var c = form.querySelector('input[name="gabarit"]:checked');
+    return c && c.value ? c.getAttribute('data-libelle') : '';
   }
 
   function emailLink() { return '<a href="mailto:' + R(cfg.email) + '">' + R(cfg.email) + '</a>'; }
@@ -176,10 +182,10 @@
   function recapitulatif() {
     var f = form.elements;
     var v = function (n) { return (f[n] && f[n].value ? f[n].value : '').trim(); };
-    var gab = f.gabarit.options[f.gabarit.selectedIndex];
+    var gab = gabLibelle();
     return [
       ['Nom', v('nom')], ['Entreprise', v('entreprise')], ['E-mail', v('email')], ['Téléphone', v('telephone')],
-      ['Site actuel', v('site')], ['Secteur', v('secteur')], ['Design souhaité', gab && f.gabarit.value ? gab.text : ''],
+      ['Site actuel', v('site')], ['Secteur', v('secteur')], ['Design souhaité', gab],
       ['Formule envisagée', v('formule')], ['Personnalisation', v('personnalisation')], ['Message', v('message')]
     ].filter(function (l) { return l[1]; });
   }

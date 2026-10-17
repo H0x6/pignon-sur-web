@@ -19,7 +19,8 @@
 <body>
 <a class="evitement" href="#contenu">Aller au contenu</a>
 
-<aside class="demo" aria-label="Site d’exemple">
+<aside class="demo" aria-label="Site d’exemple" data-demo-bar data-demo-court="Site d’exemple : l’hôtel est imaginaire.">
+  <a class="demo__retour" href="../../index.html"><span aria-hidden="true">←</span> Retour à Pignon sur Web</a>
   <span><strong>Site d’exemple premium</strong> créé par Pignon sur Web : l’hôtel est imaginaire.</span>
   <a href="../../realisations.html#exemples">Voir les autres exemples</a>
   <a href="../../contact.html">Je veux ce niveau de site</a>
@@ -139,34 +140,33 @@
       <h2 class="titre-section" id="titre-chambres">Les chambres</h2>
       <p class="chambres__intro">Toutes ont un lit de 180, du linge séché dehors quand il fait beau et une fenêtre qu’on referme à regret. Le petit-déjeuner et l’accès au spa sont compris.</p>
     </div>
-    <ul class="chambres__liste" role="list" data-chambres>
-      <li class="chambre" data-apercu="img/chambre-sapin-800.webp">
+    <ul class="chambres__liste chambres__liste--photos" role="list" data-chambres>
+      <li class="chambre">
+        <div class="chambre__photo"><img class="chambre__img" src="img/chambre-sapin-800.webp" srcset="img/chambre-sapin-800.webp 800w, img/chambre-sapin-1600.webp 1600w" sizes="(min-width: 1000px) 24vw, (min-width: 640px) 45vw, 78vw" width="800" height="1200" alt="" loading="lazy" decoding="async"></div>
         <h3 class="chambre__nom"><button type="button" class="chambre__ouvrir" data-fiche="fiche-sapin" aria-haspopup="dialog">Chambre Sapin</button></h3>
         <p class="chambre__infos">26&nbsp;m², côté forêt, pour deux</p>
-        <p class="chambre__prix">dès 290&nbsp;€</p>
-        <img class="chambre__vignette" src="img/chambre-sapin-800.webp" width="800" height="1200" alt="" loading="lazy" decoding="async">
+        <p class="chambre__prix">dès 290&nbsp;€ <span class="chambre__voir" aria-hidden="true">Voir la chambre</span></p>
       </li>
-      <li class="chambre" data-apercu="img/chambre-lac-800.webp">
+      <li class="chambre">
+        <div class="chambre__photo"><img class="chambre__img" src="img/chambre-lac-800.webp" srcset="img/chambre-lac-800.webp 800w, img/chambre-lac-1600.webp 1600w" sizes="(min-width: 1000px) 24vw, (min-width: 640px) 45vw, 78vw" width="800" height="1200" alt="" loading="lazy" decoding="async"></div>
         <h3 class="chambre__nom"><button type="button" class="chambre__ouvrir" data-fiche="fiche-lac" aria-haspopup="dialog">Chambre Lac</button></h3>
         <p class="chambre__infos">32&nbsp;m², balcon sur le lac Blanc, pour deux</p>
-        <p class="chambre__prix">dès 360&nbsp;€</p>
-        <img class="chambre__vignette" src="img/chambre-lac-800.webp" width="800" height="1200" alt="" loading="lazy" decoding="async">
+        <p class="chambre__prix">dès 360&nbsp;€ <span class="chambre__voir" aria-hidden="true">Voir la chambre</span></p>
       </li>
-      <li class="chambre" data-apercu="img/suite-chaume-800.webp">
+      <li class="chambre">
+        <div class="chambre__photo"><img class="chambre__img" src="img/suite-chaume-800.webp" srcset="img/suite-chaume-800.webp 800w, img/suite-chaume-1600.webp 1600w" sizes="(min-width: 1000px) 24vw, (min-width: 640px) 45vw, 78vw" width="800" height="1178" alt="" loading="lazy" decoding="async"></div>
         <h3 class="chambre__nom"><button type="button" class="chambre__ouvrir" data-fiche="fiche-chaume" aria-haspopup="dialog">Suite Chaume</button></h3>
         <p class="chambre__infos">48&nbsp;m², poêle à bois, jusqu’à trois</p>
-        <p class="chambre__prix">dès 520&nbsp;€</p>
-        <img class="chambre__vignette" src="img/suite-chaume-800.webp" width="800" height="1178" alt="" loading="lazy" decoding="async">
+        <p class="chambre__prix">dès 520&nbsp;€ <span class="chambre__voir" aria-hidden="true">Voir la chambre</span></p>
       </li>
-      <li class="chambre" data-apercu="img/suite-hohneck-800.webp">
+      <li class="chambre">
+        <div class="chambre__photo"><img class="chambre__img" src="img/suite-hohneck-800.webp" srcset="img/suite-hohneck-800.webp 800w, img/suite-hohneck-1600.webp 1600w" sizes="(min-width: 1000px) 24vw, (min-width: 640px) 45vw, 78vw" width="800" height="533" alt="" loading="lazy" decoding="async"></div>
         <h3 class="chambre__nom"><button type="button" class="chambre__ouvrir" data-fiche="fiche-hohneck" aria-haspopup="dialog">Suite Hohneck</button></h3>
         <p class="chambre__infos">70&nbsp;m², terrasse et bain nordique privé, jusqu’à quatre</p>
-        <p class="chambre__prix">dès 840&nbsp;€</p>
-        <img class="chambre__vignette" src="img/suite-hohneck-800.webp" width="800" height="533" alt="" loading="lazy" decoding="async">
+        <p class="chambre__prix">dès 840&nbsp;€ <span class="chambre__voir" aria-hidden="true">Voir la chambre</span></p>
       </li>
     </ul>
     <p class="chambres__note">Prix par nuit pour deux personnes, petit-déjeuner et spa compris. Taxe de séjour en sus.</p>
-    <div class="apercu" aria-hidden="true" data-apercu-flottant><img src="img/chambre-sapin-800.webp" width="800" height="1200" alt="" loading="lazy" decoding="async"></div>
 
     <dialog class="fiche" id="fiche-sapin" aria-labelledby="fiche-sapin-titre" data-chambre="sapin">
       <div class="fiche__in">
