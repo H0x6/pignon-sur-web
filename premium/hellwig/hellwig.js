@@ -406,4 +406,75 @@
       window.location.href = 'mailto:caveau@domaine-hellwig.example?subject=' + encodeURIComponent('Visite des foudres') + '&body=' + encodeURIComponent(recap.textContent + '\n\n' + resa.elements.nom.value + '\n' + resa.elements.tel.value + '\n' + resa.elements.email.value);
     });
   }
+
+  /* Avis : ancienneté en clair (« il y a 3 semaines »), à partir de « data-jours » (exemples) ou de « datetime » */
+  (function () {
+    var rtf = window.Intl && Intl.RelativeTimeFormat ? new Intl.RelativeTimeFormat('fr', { numeric: 'auto' }) : null;
+    $$('.avis time').forEach(function (el) {
+      var j = el.getAttribute('data-jours');
+      var d = j !== null ? new Date(Date.now() - parseFloat(j) * 864e5) : new Date(el.getAttribute('datetime'));
+      if (isNaN(d)) return;
+      el.setAttribute('datetime', d.toISOString().slice(0, 10));
+      if (el.hasAttribute('data-mois')) { el.textContent = d.toLocaleDateString('fr-FR', { month: 'short', year: 'numeric' }); return; }
+      var n = Math.round((Date.now() - d) / 864e5);
+      el.textContent = !rtf ? d.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' }) : n < 7 ? rtf.format(-n, 'day') : n < 30 ? rtf.format(-Math.round(n / 7), 'week') : n < 365 ? rtf.format(-Math.max(1, Math.round(n / 30.4)), 'month') : rtf.format(-Math.round(n / 365), 'year');
+    });
+  })();
+
+  /* Avis : un à la fois. Choix par le nom (ou « suivant ») ; défilement toutes les 7 s quand la section est à l'écran,
+     jamais avec le mouvement réduit ; arrêté au survol, quand le focus est dans la section et par le bouton Pause.
+     Sans JavaScript, tous les avis restent affichés les uns sous les autres. */
+  (function () {
+    var sec = $('[data-avis]');
+    if (!sec) return;
+    var items = $$('[data-avis-item]', sec), choix = $$('[data-avis-choix]', sec), pause = $('[data-avis-pause]', sec), num = $('[data-avis-num]', sec);
+    var cmd = $('[data-avis-commandes]', sec);
+    if (items.length < 2) return;
+    var DUREE = 7000, i = 0, minuteur = null, visible = false, arret = reduit, retenu = false;
+    sec.classList.add('avis--js');
+    if (cmd) cmd.hidden = false;
+    if (pause && reduit) pause.hidden = true;
+    sec.style.setProperty('--avis-duree', DUREE + 'ms');
+    var pret = false;
+    function montrer(n) {
+      var avant = i;
+      i = (n + items.length) % items.length;
+      // L'avis qui vient d'être quitté porte « data-sort » le temps de son animation de sortie
+      items.forEach(function (it) { it.removeAttribute('data-sort'); });
+      if (pret && avant !== i) { void items[avant].offsetWidth; items[avant].setAttribute('data-sort', ''); }
+      pret = true;
+      items.forEach(function (it, k) {
+        var pos = (k - i + items.length) % items.length;
+        it.setAttribute('data-pos', pos);
+        it.inert = pos !== 0;
+      });
+      choix.forEach(function (b, k) { b.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
+      if (num) num.textContent = i + 1;
+      relancer();
+    }
+    function relancer() {
+      clearTimeout(minuteur);
+      sec.classList.remove('avis--defile');
+      if (arret || !visible || retenu || doc.hidden) return;
+      void sec.offsetWidth;
+      sec.classList.add('avis--defile');
+      minuteur = setTimeout(function () { montrer(i + 1); }, DUREE);
+    }
+    choix.forEach(function (b, k) { b.addEventListener('click', function () { montrer(k); }); });
+    $$('[data-avis-suivant]', sec).forEach(function (b) { b.addEventListener('click', function () { montrer(i + 1); }); });
+    if (pause) pause.addEventListener('click', function () {
+      arret = !arret;
+      pause.setAttribute('aria-pressed', arret ? 'true' : 'false');
+      pause.textContent = arret ? 'Lecture' : 'Pause';
+      relancer();
+    });
+    var scene = $('.avis__scene', sec) || sec;
+    scene.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { retenu = true; relancer(); } });
+    scene.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { retenu = false; relancer(); } });
+    sec.addEventListener('focusin', function () { retenu = true; relancer(); });
+    sec.addEventListener('focusout', function (e) { if (!sec.contains(e.relatedTarget)) { retenu = false; relancer(); } });
+    doc.addEventListener('visibilitychange', relancer);
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { visible = e[0].isIntersecting; relancer(); }, { threshold: 0.4 }).observe(scene);
+    montrer(0);
+  })();
 })();

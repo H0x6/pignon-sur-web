@@ -32,6 +32,7 @@
   var tpl = byId(cfg.gabarits, q.get('gabarit'));
   if (tpl) tplSelect.value = tpl.id;
   else if (q.get('formule') === 'sur-mesure') tplSelect.value = 'sur-mesure';
+  else if (q.get('gabarit') === 'premium' || /^premium/.test(q.get('formule') || '')) tplSelect.value = 'premium';
 
   var formule = byId(cfg.formules, q.get('formule'));
   if (formule) {

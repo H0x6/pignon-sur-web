@@ -298,6 +298,53 @@
     </div>
   </section>
 
+  <!-- Avis : le livre d'or du caveau. Un avis à la fois, choisi par le nom de son auteur ; défilement doux toutes les 7 s
+       quand la section est à l'écran (jamais avec le mouvement réduit), arrêté au survol, au clavier ou par le bouton. -->
+  <section class="avis" id="avis" aria-labelledby="titre-avis" data-avis>
+    <div class="avis__in">
+      <div class="avis__tete">
+        <p class="avis__sur">Au livre d'or</p>
+        <h2 class="titre-section" id="titre-avis">Ils sont passés au caveau</h2>
+        <div class="avis__note">
+          <p class="avis__chiffre">4,9</p>
+          <p><span class="etoiles" role="img" aria-label="Note moyenne : 4,9 sur 5" style="--note: 98%"></span><span class="avis__nb">128 avis sur <span translate="no">Google</span></span></p>
+        </div>
+        <p class="avis__mention">Les avis les mieux notés, du plus récent au plus ancien. Avis publiés sur Google par leurs auteurs, sans contrôle du domaine.</p>
+        <p class="avis__fictif">Avis imaginaires, comme le domaine. Sur le site d'un client, ses derniers avis Google s'affichent ici et se mettent à jour tout seuls.</p>
+      </div>
+      <div class="avis__scene">
+        <ul class="avis__liste" role="list">
+          <li class="avis__item" data-avis-item>
+            <figure>
+              <blockquote><p>Visite des foudres passionnante avec Anne, qui prend le temps d'expliquer sans jargon. Le riesling du Kapellweg nous a conquis : six bouteilles dans le coffre.</p></blockquote>
+              <figcaption><span class="etoiles etoiles--petites" role="img" aria-label="5 sur 5"></span><strong>Claire F.</strong> <time data-jours="12"></time><span class="avis__gout">A goûté : Riesling Kapellweg 2023</span></figcaption>
+            </figure>
+          </li>
+          <li class="avis__item" data-avis-item>
+            <figure>
+              <blockquote lang="en"><p>Lovely family estate. Free tasting of the whole range and no pressure to buy. Ask for the late-harvest riesling!</p></blockquote>
+              <figcaption><span class="etoiles etoiles--petites" role="img" aria-label="5 sur 5"></span><strong>Pieter V.</strong> <time data-jours="31"></time><span class="avis__gout">A goûté : Riesling Vendanges tardives 2019</span></figcaption>
+            </figure>
+          </li>
+          <li class="avis__item" data-avis-item>
+            <figure>
+              <blockquote><p>Bouteilles commandées par e-mail pour notre mariage : des conseils justes sur les accords, et tout était prêt au caveau le jour dit.</p></blockquote>
+              <figcaption><span class="etoiles etoiles--petites" role="img" aria-label="5 sur 5"></span><strong>Marc E.</strong> <time data-jours="64"></time><span class="avis__gout">A goûté : Crémant d'Alsace Brut</span></figcaption>
+            </figure>
+          </li>
+        </ul>
+        <div class="avis__commandes" hidden data-avis-commandes>
+          <div class="avis__choix" role="group" aria-label="Choisir un avis">
+            <button type="button" data-avis-choix>Claire F.</button>
+            <button type="button" data-avis-choix>Pieter V.</button>
+            <button type="button" data-avis-choix>Marc E.</button>
+          </div>
+          <button type="button" class="avis__pause" data-avis-pause aria-pressed="false">Pause</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Visiter : dégustation libre ou visite des foudres, sur réservation -->
   <section class="visiter" id="visiter" aria-labelledby="titre-visiter">
     <div class="visiter__in">

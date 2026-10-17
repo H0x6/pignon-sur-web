@@ -419,6 +419,60 @@
     </div>
   </section>
 
+  <!-- Avis : les cartes postales des hôtes, en pile. « Carte suivante » envoie celle du dessus sous la pile ;
+       défilement toutes les 7 s quand la pile est à l'écran (jamais avec le mouvement réduit), arrêté au survol, au clavier ou par le bouton. -->
+  <section class="avis" id="avis" aria-labelledby="titre-avis" data-avis>
+    <div class="avis__tete">
+      <p class="avis__sur">Le courrier de l'hôtel</p>
+      <h2 class="titre-section" id="titre-avis">Cartes postales de nos hôtes</h2>
+      <div class="avis__note">
+        <p class="avis__chiffre">4,8</p>
+        <p><span class="etoiles" role="img" aria-label="Note moyenne : 4,8 sur 5" style="--note: 96%"></span><span class="avis__nb">412 avis sur <span translate="no">Google</span></span></p>
+      </div>
+      <p class="avis__mention">Les avis les mieux notés, du plus récent au plus ancien. Avis publiés sur Google par leurs auteurs, sans contrôle de l'hôtel.</p>
+      <p class="avis__fictif">Avis imaginaires, comme l'hôtel. Sur le site d'un client, ses derniers avis Google s'affichent ici et se mettent à jour tout seuls.</p>
+    </div>
+    <div class="avis__scene">
+      <ul class="avis__pile" role="list">
+        <li class="postale" data-avis-item>
+          <figure class="postale__in">
+            <blockquote class="postale__texte"><p>Réveil face aux crêtes, bassin chauffé sous la neige, et un dîner qui vaut à lui seul le détour. Le personnel retient votre prénom dès le deuxième jour.</p></blockquote>
+            <figcaption class="postale__dos">
+              <span class="postale__timbre" role="img" aria-label="5 sur 5"><span aria-hidden="true">5</span></span>
+              <span class="postale__cachet" aria-hidden="true"><span>Lac Blanc</span><time data-jours="9" data-mois></time></span>
+              <span class="postale__adresse"><span class="postale__de">De la part de</span> <strong>Émilie R.</strong> <time data-jours="9"></time></span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="postale" data-avis-item>
+          <figure class="postale__in">
+            <blockquote class="postale__texte" lang="de"><p>Ruhige Zimmer, ein wunderbarer Spa und das beste Frühstück der Vogesen. Wir kommen im Winter wieder.</p></blockquote>
+            <figcaption class="postale__dos">
+              <span class="postale__timbre" role="img" aria-label="5 sur 5"><span aria-hidden="true">5</span></span>
+              <span class="postale__cachet" aria-hidden="true"><span>Lac Blanc</span><time data-jours="23" data-mois></time></span>
+              <span class="postale__adresse"><span class="postale__de">De la part de</span> <strong>Jonas W.</strong> <time data-jours="23"></time></span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="postale" data-avis-item>
+          <figure class="postale__in">
+            <blockquote class="postale__texte"><p>Week-end offert pour nos vingt ans de mariage : la chambre Lac, un soin à deux au spa, et tout était parfait jusqu'au départ.</p></blockquote>
+            <figcaption class="postale__dos">
+              <span class="postale__timbre" role="img" aria-label="5 sur 5"><span aria-hidden="true">5</span></span>
+              <span class="postale__cachet" aria-hidden="true"><span>Lac Blanc</span><time data-jours="47" data-mois></time></span>
+              <span class="postale__adresse"><span class="postale__de">De la part de</span> <strong>Sandrine K.</strong> <time data-jours="47"></time></span>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+      <div class="avis__commandes" hidden data-avis-commandes>
+        <button type="button" class="bouton" data-avis-suivant>Carte suivante</button>
+        <p class="avis__compte" aria-hidden="true"><span data-avis-num>1</span> / 3</p>
+        <button type="button" class="avis__pause" data-avis-pause aria-pressed="false">Pause</button>
+      </div>
+    </div>
+  </section>
+
   <!-- Réserver --------------------------------------------------------------------- -->
   <section class="reserver" id="reserver" aria-labelledby="titre-reserver">
     <div class="reserver__tete">

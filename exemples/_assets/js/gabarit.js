@@ -659,6 +659,65 @@
     setInterval(maj, 60000);
   }
 
+  /* Avis : dates relatives (« il y a 2 semaines ») et, sur le site final hébergé avec PHP,
+     les avis Google les plus récents (api/avis.php, mis en cache 6 heures sur l'hébergement) ------ */
+  var avisSec = doc.querySelector('.pv-sec--avis');
+  if (avisSec) {
+    var rtf = window.Intl && Intl.RelativeTimeFormat ? new Intl.RelativeTimeFormat(LANG, { numeric: 'auto' }) : null;
+    var relatif = function (date) {
+      var j = Math.round((Date.now() - date.getTime()) / 864e5);
+      if (!rtf || isNaN(j) || j < 0 || j > 364) return null;
+      if (j < 7) return rtf.format(-j, 'day');
+      if (j < 30) return rtf.format(-Math.round(j / 7), 'week');
+      return rtf.format(-Math.max(1, Math.round(j / 30.4)), 'month');
+    };
+    var dates = function () {
+      each(avisSec.querySelectorAll('.pv-review-date'), function (el) {
+        var j = el.getAttribute('data-jours');
+        var d = j !== null ? new Date(Date.now() - parseFloat(j) * 864e5) : new Date(el.getAttribute('datetime'));
+        if (j !== null) el.setAttribute('datetime', d.toISOString().slice(0, 10));
+        var r = relatif(d);
+        if (r) el.textContent = r;
+      });
+    };
+    dates();
+    var src = avisSec.getAttribute('data-avis');
+    if (src && mode === 'production' && window.fetch) {
+      var nfr = function (n, d) { return Number(n).toLocaleString(LANG, { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); };
+      fetch(src, { headers: { Accept: 'application/json' } })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (d) {
+          if (!d || !d.avis || !d.avis.length) return;
+          var liste = avisSec.querySelector('.pv-reviews');
+          var modele = liste && liste.querySelector('.pv-review');
+          if (!modele) return;
+          var surCinq = (modele.querySelector('.pv-stars') || { getAttribute: function () { return ''; } }).getAttribute('aria-label').replace(/^[\d.,\s]+/, '');
+          var nouvelles = d.avis.slice(0, 3).map(function (a) {
+            var li = modele.cloneNode(true);
+            var nom = String(a.auteur || '');
+            var av = li.querySelector('.pv-avatar');
+            if (av) { av.textContent = nom.charAt(0).toUpperCase(); var h = 0; for (var i = 0; i < nom.length; i++) h = (h * 31 + nom.charCodeAt(i)) % 360; av.style.setProperty('--pv-teinte', h); }
+            var n = li.querySelector('.pv-review-nom'); if (n) n.textContent = nom;
+            var t = li.querySelector('.pv-review-date'); if (t) { t.removeAttribute('data-jours'); t.setAttribute('datetime', String(a.date || '').slice(0, 10)); t.textContent = new Date(a.date).toLocaleDateString(LANG, { month: 'long', year: 'numeric' }); }
+            var s = li.querySelector('.pv-stars'); if (s) { s.style.setProperty('--pv-note', Math.round(a.note / 5 * 100) + '%'); s.setAttribute('aria-label', nfr(a.note) + ' ' + surCinq); }
+            var q = li.querySelector('.pv-review-texte'); if (q) { if (a.langue && a.langue !== LANG) q.setAttribute('lang', a.langue); else q.removeAttribute('lang'); q.querySelector('p').textContent = a.texte; }
+            return li;
+          });
+          liste.textContent = '';
+          nouvelles.forEach(function (li) { liste.appendChild(li); });
+          var ch = avisSec.querySelector('.pv-avis-chiffre');
+          if (ch && d.note) ch.textContent = nfr(d.note, 1);
+          var moy = avisSec.querySelector('.pv-avis-moy .pv-stars');
+          if (moy && d.note) { moy.style.setProperty('--pv-note', Math.round(d.note / 5 * 100) + '%'); moy.setAttribute('aria-label', moy.getAttribute('aria-label').replace(/[\d][\d.,]*/, nfr(d.note, 1))); }
+          var nb = avisSec.querySelector('.pv-avis-nb');
+          if (nb && d.nombre) nb.firstChild.nodeValue = nb.firstChild.nodeValue.replace(/^[\d\s  .,]+/, nfr(d.nombre) + ' ');
+          dates();
+          if (!reduce) { liste.classList.add('pv-avis-maj'); }
+        })
+        .catch(function () { /* les avis écrits dans la page restent affichés */ });
+    }
+  }
+
   /* Apparition douce des sections au défilement ----------------------
      Seulement si le mouvement n'est pas réduit ; les sections déjà à l'écran restent visibles.
      Dans une grille (cartes, produits, galerie, avis, équipe), les éléments se suivent à 50 ms. */

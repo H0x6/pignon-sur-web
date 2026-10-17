@@ -227,4 +227,18 @@
   window.addEventListener('scroll', function () { if (!prevu) { prevu = true; requestAnimationFrame(maj); } }, { passive: true });
   window.addEventListener('resize', function () { vw = window.innerWidth; vh = window.innerHeight; dernierP = -1; maj(); });
   maj();
+
+  /* Avis : ancienneté en clair (« il y a 3 semaines »), à partir de « data-jours » (exemples) ou de « datetime » */
+  (function () {
+    var rtf = window.Intl && Intl.RelativeTimeFormat ? new Intl.RelativeTimeFormat('fr', { numeric: 'auto' }) : null;
+    $$('.avis time').forEach(function (el) {
+      var j = el.getAttribute('data-jours');
+      var d = j !== null ? new Date(Date.now() - parseFloat(j) * 864e5) : new Date(el.getAttribute('datetime'));
+      if (isNaN(d)) return;
+      el.setAttribute('datetime', d.toISOString().slice(0, 10));
+      if (el.hasAttribute('data-mois')) { el.textContent = d.toLocaleDateString('fr-FR', { month: 'short', year: 'numeric' }); return; }
+      var n = Math.round((Date.now() - d) / 864e5);
+      el.textContent = !rtf ? d.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' }) : n < 7 ? rtf.format(-n, 'day') : n < 30 ? rtf.format(-Math.round(n / 7), 'week') : n < 365 ? rtf.format(-Math.max(1, Math.round(n / 30.4)), 'month') : rtf.format(-Math.round(n / 365), 'year');
+    });
+  })();
 })();
